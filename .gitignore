@@ -1,0 +1,71 @@
+# --- Logs ---
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# --- Dependency Folders ---
+node_modules/
+
+# --- Vite Build Output ---
+dist/
+dist-ssr/
+
+# --- Environment & Local Config Files ---
+.env
+.env.*.local
+*.local
+
+# --- System Files ---
+.DS_Store
+Thumbs.db
+
+# --- Editor/IDE Directories ---
+.vscode/
+!.vscode/extensions.json   # Keep shared extension config
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# --- Test Output (Optional if using Jest/Vitest) ---
+coverage/
+
+# --- Optional: Mac system files ---
+.AppleDouble
+.LSOverride
+
+# --- Optional: Windows system files ---
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# --- Optional: Linux system files ---
+*~
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
