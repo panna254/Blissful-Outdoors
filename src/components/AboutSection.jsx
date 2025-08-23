@@ -33,32 +33,36 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl font-bold leading-tight">
-            Creating Beauty & Comfort in Outdoor Spaces Since{" "}
-            <span className="text-green-600">2015</span>
+            Who We Are — Since <span className="text-green-600">2015</span>
           </h2>
 
           <p className="text-gray-700 leading-relaxed text-lg">
-            At{" "}
-            <strong className="text-green-700">
-              Blissful Outdoor Solutions
-            </strong>
-            , we believe outdoor spaces should inspire joy, comfort, and pride.
-            For the past decade, we’ve transformed spaces in over 35 counties
-            across Kenya – from serene coastal towns to the rugged beauty of the
-            north – leaving behind satisfied clients and stunning projects.
+            <strong className="text-green-700">Blissful Outdoor Solutions</strong> is a Limited Company in Kenya specialising in outdoor works — everything beyond enclosed buildings: homes, business premises, and public open spaces. We beautify outdoor areas by revamping, doing anew, and adding ideas that elevate appeal and value.
           </p>
+
+          <div className="bg-green-50 shadow p-6 rounded-2xl">
+            <h3 className="text-xl font-semibold text-green-800">Our Mantra</h3>
+            <p className="text-gray-700 mt-2">
+              “We transform and add value to your Outdoor Living Areas.” This slogan captures our approach from day one — transforming ideas into tangible results.
+            </p>
+          </div>
+
+          <div className="bg-gray-50 shadow p-6 rounded-2xl">
+            <h3 className="text-xl font-semibold text-green-800">Our Reach</h3>
+            <p className="text-gray-700 mt-2">
+              Established in 2015, we have delivered projects for 10+ years across 35+ counties — from Isiolo and Marsabit to Kilifi and Taita Taveta. Explore highlights on our <a href="/projects" className="text-green-700 underline">Projects</a> and <a href="/gallery" className="text-green-700 underline">Gallery</a> pages.
+            </p>
+            <p className="text-gray-700 mt-2">
+              We also share videos and testimonials that reflect our clients’ experiences and the results we deliver.
+            </p>
+          </div>
 
           {/* Mission */}
           <div className="bg-gray-50 shadow-lg p-6 rounded-2xl flex gap-4 items-start">
             <img src={missionIcon} alt="Mission" className="w-12 h-12" />
             <div>
-              <h3 className="text-xl font-semibold text-green-700">
-                Our Mission
-              </h3>
-              <p className="text-gray-700">
-                To transform and add value to your outdoor living areas by
-                combining artistry, innovation, and professional craftsmanship.
-              </p>
+              <h3 className="text-xl font-semibold text-green-700">Our Mission</h3>
+              <p className="text-gray-700">To transform and add value to your outdoor living areas by combining artistry, innovation, and professional craftsmanship.</p>
             </div>
           </div>
 
@@ -66,9 +70,7 @@ const AboutSection = () => {
           <div className="bg-gray-50 shadow-lg p-6 rounded-2xl flex gap-4 items-start">
             <img src={servicesIcon} alt="Services" className="w-12 h-12" />
             <div>
-              <h3 className="text-xl font-semibold text-green-700">
-                What We Do
-              </h3>
+              <h3 className="text-xl font-semibold text-green-700">What We Do</h3>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 text-gray-700">
                 <li>🌿 Landscaping</li>
                 <li>🚗 Car Parking Shades</li>
@@ -79,6 +81,7 @@ const AboutSection = () => {
                 <li>🪨 Mazeras</li>
                 <li>⚡ Electric Fences</li>
                 <li>🌸 Flowers & Vases</li>
+                <li>🧱 Terrazzo & Perimeter Walls</li>
               </ul>
             </div>
           </div>
@@ -87,16 +90,27 @@ const AboutSection = () => {
           <div className="bg-gray-50 shadow-lg p-6 rounded-2xl flex gap-4 items-start">
             <img src={whyUsIcon} alt="Why Choose Us" className="w-12 h-12" />
             <div>
-              <h3 className="text-xl font-semibold text-green-700">
-                Why Choose Us?
-              </h3>
-              <ul className="list-disc pl-6 text-gray-700 mt-2">
-                <li>Over 10 years of outdoor project excellence</li>
-                <li>Premium designs with long-lasting results</li>
-                <li>Spaces that invite comfort and serenity</li>
-                <li>Tailored solutions for your unique vision</li>
+              <h3 className="text-xl font-semibold text-green-700">Why Choose Us?</h3>
+              <ul className="list-disc pl-6 text-gray-700 mt-2 space-y-1">
+                <li>You buy more than a product — you buy experience, class, comfort, serenity, glamour, confidence, and style.</li>
+                <li>10+ years creating outdoor serenity for homes, businesses, and public spaces.</li>
+                <li>Young, vibrant, liberal team — we listen, shape ideas, and deliver results.</li>
+                <li>Transparent advice and realistic pricing for value-driven outcomes.</li>
               </ul>
+              <p className="text-gray-700 mt-3">
+                Read what clients say on our <a href="/projects" className="text-green-700 underline">Projects</a> and <a href="/gallery" className="text-green-700 underline">Gallery</a> pages.
+              </p>
             </div>
+          </div>
+
+          <div className="bg-gray-50 shadow-lg p-6 rounded-2xl">
+            <h3 className="text-xl font-semibold text-green-700">How We Work</h3>
+            <p className="text-gray-700 mt-2">
+              <span className="font-semibold">Communication first.</span> We engage deeply to understand your needs and constraints, explain trade‑offs, and avoid shortcuts that compromise quality. Where necessary, we recommend site surveys for accurate measurements and quotes.
+            </p>
+            <p className="text-gray-700 mt-2">
+              <span className="font-semibold">Value for money.</span> Our pricing is fair and realistic, reflecting materials, logistics, and craftsmanship. Some services (e.g., Cabro Installation and Modern Car Parking Shades) support instant online quotations. Start your quote on the <a href="/quotation" className="text-green-700 underline">Quotation</a> page.
+            </p>
           </div>
         </motion.div>
       </div>

@@ -34,16 +34,10 @@ const services = [
     image: carShadeImg,
   },
   {
-    title: "Restaurant & Club Shade Sails",
+    title: "Shade Sails & Canopies",
     description:
-      "Stylish sail shades for outdoor dining or relaxation in restaurants and clubs.",
+      "Modern shade solutions for irregular areas like car washes, clubs, restaurants, and gardens. Unlike mobile tents, they don't carry rainwater and are wind-resistant.",
     image: shadeSailsImg,
-  },
-  {
-    title: "Canopies",
-    description:
-      "Stylish overhead covers ideal for patios, terraces, and lounging areas—both functional and elegant.",
-    image: canopiesImg,
   },
   {
     title: "Privacy Screen Fence",

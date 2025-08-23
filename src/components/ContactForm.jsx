@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
@@ -121,22 +122,37 @@ const ContactForm = () => {
 
         {/* INFO */}
         <div className="flex flex-col justify-center bg-green-700 text-white p-8 rounded-2xl shadow-md">
-          <h3 className="text-2xl font-semibold mb-4">Reach Us Directly</h3>
-          <p className="mb-4">
-            📞 <strong>Call/WhatsApp:</strong>
-          </p>
-          <p className="mb-2">0715 812 430</p>
-          <p className="mb-6">0741 612 080</p>
+          <h3 className="text-2xl font-semibold mb-6">Reach Us Directly</h3>
+          
+          <div className="space-y-6">
+            {/* Phone/WhatsApp */}
+            <div className="flex items-start space-x-3">
+              <FaPhone className="text-green-300 text-lg mt-1 flex-shrink-0" />
+              <div>
+                <p className="font-semibold mb-2">Call/WhatsApp:</p>
+                <p className="mb-1">+254 715 812 430</p>
+                <p className="mb-1">+254 741 612 080</p>
+              </div>
+            </div>
 
-          <p className="mb-4">
-            📧 <strong>Email:</strong>
-          </p>
-          <p className="mb-6">info@blissfuloutdoorsolutions.com</p>
+            {/* Email */}
+            <div className="flex items-start space-x-3">
+              <FaEnvelope className="text-green-300 text-lg mt-1 flex-shrink-0" />
+              <div>
+                <p className="font-semibold mb-2">Email:</p>
+                <p>info@blissfuloutdoorsolutions.com</p>
+              </div>
+            </div>
 
-          <p className="mb-4">
-            📍 <strong>Location:</strong>
-          </p>
-          <p>Ruiru, Kiambu County, Kenya</p>
+            {/* Location */}
+            <div className="flex items-start space-x-3">
+              <FaMapMarkerAlt className="text-green-300 text-lg mt-1 flex-shrink-0" />
+              <div>
+                <p className="font-semibold mb-2">Location:</p>
+                <p>Ruiru, Kiambu County, Kenya</p>
+              </div>
+            </div>
+          </div>
         </div>
       </motion.div>
     </section>

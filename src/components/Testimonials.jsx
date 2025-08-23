@@ -8,7 +8,6 @@ const testimonials = [
     title: "Homeowner, Nairobi",
     feedback:
       "Blissful Outdoors completely transformed my backyard. Their attention to detail and professionalism exceeded my expectations.",
-    image: "/assets/testimonials/jane.jpg",
     videoUrl: "",
     description: "Backyard transformation project with detailed landscaping.",
   },
@@ -17,8 +16,7 @@ const testimonials = [
     title: "Architect",
     feedback:
       "Working with Blissful has been smooth from start to finish. They deliver what they promise, and the results speak for themselves.",
-    image: "/assets/testimonials/david.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/@blissfuloutdoorsolutions",
     description: "Collaboration on a multi-home estate design.",
   },
   {
@@ -26,7 +24,6 @@ const testimonials = [
     title: "Landlord",
     feedback:
       "Their gazebo installation was just perfect. It added so much value and beauty to my property.",
-    image: "/assets/testimonials/sarah.jpg",
     videoUrl: "",
     description: "Gazebo installation in a rental compound.",
   },
@@ -35,16 +32,14 @@ const testimonials = [
     title: "Property Manager",
     feedback:
       "They brought our outdoor seating area to life. Our tenants love it!",
-    image: "/assets/testimonials/brian.jpg",
-    videoUrl: "https://youtu.be/dQw4w9WgXcQ?si=DHjlnUb4fbp5qkeY",
+    videoUrl: "https://www.youtube.com/@blissfuloutdoorsolutions",
     description: "Outdoor seating area design and execution.",
   },
   {
     name: "Lilian T.",
     title: "Interior Designer",
     feedback:
-      "It’s rare to find such a professional outdoor team. Highly recommend!",
-    image: "/assets/testimonials/lilian.jpg",
+      "It's rare to find such a professional outdoor team. Highly recommend!",
     videoUrl: "",
     description: "Collaboration on villa aesthetics inside and out.",
   },
@@ -53,8 +48,7 @@ const testimonials = [
     title: "Business Owner",
     feedback:
       "Their patio work turned my café into a serene spot that attracts customers.",
-    image: "/assets/testimonials/george.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=jfKfPfyJRdk",
+    videoUrl: "https://www.youtube.com/@blissfuloutdoorsolutions",
     description: "Café patio remodeling project.",
   },
 ];
@@ -84,11 +78,9 @@ const Testimonials = () => {
               className="snap-start min-w-[280px] sm:min-w-[340px] md:min-w-[400px] bg-gray-50 border border-green-100 p-6 rounded-2xl shadow-sm hover:shadow-lg transition duration-300 ease-in-out"
             >
               <div className="flex items-center gap-4 mb-4">
-                <img
-                  src={t.image}
-                  alt={t.name}
-                  className="w-14 h-14 rounded-full object-cover border-2 border-green-500"
-                />
+                <div className="w-14 h-14 rounded-full bg-green-600 border-2 border-green-500 flex items-center justify-center text-white font-bold text-lg">
+                  {t.name.split(' ').map(n => n[0]).join('')}
+                </div>
                 <div>
                   <h4 className="font-semibold text-lg text-gray-900">
                     {t.name}
