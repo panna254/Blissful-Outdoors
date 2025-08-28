@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+// Import the services list from ServicesSection
+import { services } from "./ServicesSection";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -83,6 +85,30 @@ const Navbar = () => {
                 </div>
               );
             }
+            // Add dropdown for What we Do (limit to 7 major services)
+            if (item.toLowerCase() === "what we do") {
+              return (
+                <div key={item} className="relative group inline-block">
+                  <Link
+                    to="/services"
+                    className="hover:underline underline-offset-4 decoration-green-500 transition duration-200"
+                  >
+                    {item}
+                  </Link>
+                  <div className="absolute left-0 top-full z-50 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition ease-out duration-150 bg-white shadow-lg rounded-md py-2 w-64 border border-gray-100 pointer-events-none group-hover:pointer-events-auto">
+                    {services.slice(0, 7).map((service) => (
+                      <Link
+                        key={service.title}
+                        to={`/services#${service.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`}
+                        className="block px-4 py-2 text-sm hover:bg-gray-50"
+                      >
+                        {service.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
 
             let path;
             if (item.toLowerCase() === "home") {
@@ -160,6 +186,32 @@ const Navbar = () => {
                     >
                       In progress
                     </Link>
+                  </div>
+                </div>
+              );
+            }
+            // Add dropdown for What we Do in mobile (limit to 7 major services)
+            if (item.toLowerCase() === "what we do") {
+              return (
+                <div key={item} className="w-full flex flex-col items-center">
+                  <Link
+                    to="/services"
+                    onClick={toggleMenu}
+                    className="hover:underline underline-offset-4 decoration-green-400"
+                  >
+                    {item}
+                  </Link>
+                  <div className="mt-2 flex flex-col space-y-2 text-sm">
+                    {services.slice(0, 7).map((service) => (
+                      <Link
+                        key={service.title}
+                        to={`/services#${service.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`}
+                        onClick={toggleMenu}
+                        className="hover:underline underline-offset-4 decoration-green-400"
+                      >
+                        {service.title}
+                      </Link>
+                    ))}
                   </div>
                 </div>
               );

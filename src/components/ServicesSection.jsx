@@ -14,7 +14,7 @@ import perimeterWallImg from "../assets/pwall.jpeg";
 import terrazzoImg from "../assets/terrazzo.jpeg";
 import gazeboImg from "../assets/gazebo.jpeg";
 
-const services = [
+export const services = [
   {
     title: "Landscaping Services",
     description:
@@ -91,21 +91,53 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="py-16 px-6 md:px-16 bg-gray-100" id="services">
-      <h2 className="text-3xl font-bold text-green-700 text-center mb-10">
-        What we Do
-      </h2>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {services.map((service, index) => (
-          <ServiceCard
-            key={index}
-            title={service.title}
-            description={service.description}
-            image={service.image}
-          />
-        ))}
-      </div>
-    </section>
+    <>
+      <section className="py-16 px-6 md:px-16 bg-gray-100" id="services">
+        <h2 className="text-3xl font-bold text-green-700 text-center mb-10">
+          What we Do
+        </h2>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <ServiceCard
+              key={index}
+              title={service.title}
+              description={service.description}
+              image={service.image}
+            />
+          ))}
+        </div>
+      </section>
+      {/* FAQ Section */}
+      <section className="max-w-3xl mx-auto mt-16 mb-12 p-6 bg-white rounded-lg shadow-md">
+        <h2 className="text-2xl font-bold text-green-700 mb-6 text-center">Frequently Asked Questions</h2>
+        <div className="space-y-6">
+          <div>
+            <h3 className="font-semibold text-green-800">How do I request a quote or site survey?</h3>
+            <p className="text-gray-700">You can request a quote or site survey by clicking the "Get a Quote" button on the navigation bar or the "Get a Site Survey" button under each service. Fill out the form and our team will contact you promptly.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-green-800">Which areas do you serve?</h3>
+            <p className="text-gray-700">We serve residential, commercial, and institutional clients across Kenya. Contact us to confirm service availability in your area.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-green-800">Can I customize the services to fit my needs?</h3>
+            <p className="text-gray-700">Absolutely! All our services are tailored to your specific requirements, preferences, and site conditions. We offer consultations to ensure the best solution for your space.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-green-800">How long does a typical project take?</h3>
+            <p className="text-gray-700">Project timelines vary depending on the service and project size. After a site survey, we provide a detailed schedule and keep you updated throughout the process.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-green-800">Do you offer maintenance after installation?</h3>
+            <p className="text-gray-700">Yes, we offer maintenance and aftercare for many of our services, including landscaping, fencing, and shade structures. Ask our team for details about ongoing support.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-green-800">What makes Blissful Outdoors different?</h3>
+            <p className="text-gray-700">We combine expert craftsmanship, quality materials, and a passion for outdoor beauty. Our team is dedicated to delivering lasting results and exceptional customer service.</p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
