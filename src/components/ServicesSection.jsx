@@ -17,75 +17,75 @@ import gazeboImg from "../assets/gazebo.jpeg";
 export const services = [
   {
     title: "Landscaping Services",
-    description:
-      "We turn ordinary outdoor spaces into lush, vibrant sanctuaries with full-site transformation, turf laying, planting, flower installation, walkway and paving slab installation, and soil conditioning.",
+    description: "Transform your outdoor spaces into lush, vibrant sanctuaries with professional landscaping.",
     image: landscapingImg,
+    route: "/services/landscaping"
   },
   {
     title: "Cabro Installation",
-    description:
-      "Professional cabro installations for driveways, parking areas, walkways, and more. Durable, colourfast, and resistant to heavy use.",
+    description: "Durable and colorfast cabro paving for driveways, walkways, and parking areas.",
     image: cabroImg,
+    route: "/services/cabro-installation"
   },
   {
     title: "Car Parking Shades",
-    description:
-      "Protect your vehicle from harsh weather with our curved, cantilever, or plasma-cut shades. Standard size: 2.5m x 5m per vehicle.",
+    description: "Protect your vehicles with modern curved, cantilever, or plasma-cut shade structures.",
     image: carShadeImg,
+    route: "/services/car-parking-shades"
   },
   {
     title: "Shade Sails & Canopies",
-    description:
-      "Modern shade solutions for irregular areas like car washes, clubs, restaurants, and gardens. Unlike mobile tents, they don't carry rainwater and are wind-resistant.",
+    description: "Wind-resistant shade solutions for irregular areas and commercial spaces.",
     image: shadeSailsImg,
+    route: "/services/shade-sails-canopies"
   },
   {
     title: "Privacy Screen Fence",
-    description:
-      "Improve privacy and aesthetics with durable, stylish screens for your outdoor space.",
+    description: "Enhance privacy and aesthetics with durable, stylish outdoor screens.",
     image: privacyScreenImg,
+    route: "/services/privacy-screen-fence"
   },
   {
     title: "Mazeras Installation",
-    description:
-      "Natural stone finishes that bring texture and beauty to walkways, pool decks, and walls.",
+    description: "Natural stone finishes for walkways, pool decks, and decorative walls.",
     image: mazerasImg,
+    route: "/services/mazeras-installation"
   },
   {
     title: "Electric Fence Installation",
-    description:
-      "Secure your home, school, or business with reliable electric fencing solutions.",
+    description: "Reliable security solutions for homes, schools, and commercial properties.",
     image: electricFenceImg,
+    route: "/services/electric-fence-installation"
   },
   {
     title: "Flowers & Flower Vases",
-    description:
-      "Brighten up your indoors or garden with curated flowers and elegant vases.",
+    description: "Beautiful flower arrangements and elegant vases for indoor and outdoor spaces.",
     image: flowersImg,
+    route: "/services/flowers-flower-vases"
   },
   {
     title: "Pergola Design & Installation",
-    description:
-      "Custom wood or metal pergolas to transform your patio or garden into an elegant retreat.",
+    description: "Custom wood or metal pergolas to create elegant outdoor retreats.",
     image: pergolaImg,
+    route: "/services/pergola-design-installation"
   },
   {
     title: "Perimeter Wall Construction",
-    description:
-      "Enhance your property's security and aesthetic with strong, stylish perimeter walls. We offer stone, concrete, and precast solutions tailored to your design and budget.",
+    description: "Strong and stylish perimeter walls with stone, concrete, and precast options.",
     image: perimeterWallImg,
+    route: "/services/perimeter-wall-construction"
   },
   {
     title: "Terrazzo Flooring",
-    description:
-      "Add timeless elegance to your spaces with our custom terrazzo solutions. From surface prep to polishing, we deliver durable, seamless finishes with beautiful aggregate patterns.",
+    description: "Timeless elegance with custom terrazzo solutions and seamless finishes.",
     image: terrazzoImg,
+    route: "/services/terrazzo-flooring"
   },
   {
     title: "Gazebo Installation",
-    description:
-      "Create a relaxing and functional outdoor retreat with our expertly crafted gazebos. Choose from custom wood or metal designs built to enhance your garden or backyard.",
+    description: "Expertly crafted gazebos in custom wood or metal designs for your garden.",
     image: gazeboImg,
+    route: "/services/gazebo-installation"
   },
 ];
 
@@ -103,6 +103,7 @@ const ServicesSection = () => {
               title={service.title}
               description={service.description}
               image={service.image}
+              route={service.route}
             />
           ))}
         </div>

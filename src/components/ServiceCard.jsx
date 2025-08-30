@@ -1,55 +1,52 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const ServiceCard = ({ title, description, image }) => {
+const ServiceCard = ({ title, description, image, route }) => {
   const navigate = useNavigate();
 
-  const handleCardClick = () => {
-    const serviceRoutes = {
-      "Landscaping Services": "/services/landscaping",
-      "Cabro Installation": "/services/cabro-installation",
-      "Car Parking Shades": "/services/car-parking-shades",
-      "Shade Sails & Canopies": "/services/shade-sails-canopies",
-      "Privacy Screen Fence": "/services/privacy-screen-fence",
-      "Mazeras Installation": "/services/mazeras-installation",
-      "Electric Fence Installation": "/services/electric-fence-installation",
-      "Flowers & Flower Vases": "/services/flowers-flower-vases",
-      "Pergola Design & Installation": "/services/pergola-design-installation",
-      "Perimeter Wall Construction": "/services/perimeter-wall-construction",
-      "Terrazzo Flooring": "/services/terrazzo-flooring",
-      "Gazebo Installation": "/services/gazebo-installation"
-    };
-    
-    const route = serviceRoutes[title] || "/services";
+  const handleReadMore = (e) => {
+    e.stopPropagation();
     navigate(route);
   };
 
   return (
-    <div 
-      className="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-all duration-300 border border-green-200 hover:shadow-xl cursor-pointer group"
-      onClick={handleCardClick}
-    >
+    <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 border border-green-200 hover:shadow-xl group">
       <div className="relative overflow-hidden">
         <img 
           src={image} 
           alt={title} 
-          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" 
+          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" 
         />
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <span className="text-white text-lg font-semibold bg-green-600 px-4 py-2 rounded-full">
-              View Details →
-            </span>
+        <div className="absolute top-4 right-4">
+          <div className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+            Professional Service
           </div>
         </div>
       </div>
+      
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-green-700 mb-2 group-hover:text-green-600 transition-colors duration-300">
+        <h3 className="text-xl font-bold text-green-700 mb-3 group-hover:text-green-600 transition-colors duration-300">
           {title}
         </h3>
-        <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors duration-300">
+        
+        <p className="text-gray-600 text-sm leading-relaxed mb-4">
           {description}
         </p>
+        
+        <div className="flex items-center justify-between">
+          <button
+            onClick={handleReadMore}
+            className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+          >
+            READ MORE
+          </button>
+          
+          <div className="text-green-600 group-hover:text-green-700 transition-colors duration-300">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
   );
