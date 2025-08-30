@@ -16,6 +16,20 @@ import Projects from "./pages/Projects";
 import CompletedProjects from "./pages/CompletedProjects";
 import InProgressProjects from "./pages/InProgressProjects";
 
+// Import individual service pages
+import LandscapingServices from "./pages/services/LandscapingServices";
+import CabroInstallation from "./pages/services/CabroInstallation";
+import CarParkingShades from "./pages/services/CarParkingShades";
+import ShadeSailsCanopies from "./pages/services/ShadeSailsCanopies";
+import PrivacyScreenFence from "./pages/services/PrivacyScreenFence";
+import MazerasInstallation from "./pages/services/MazerasInstallation";
+import ElectricFenceInstallation from "./pages/services/ElectricFenceInstallation";
+import FlowersFlowerVases from "./pages/services/FlowersFlowerVases";
+import PergolaDesignInstallation from "./pages/services/PergolaDesignInstallation";
+import PerimeterWallConstruction from "./pages/services/PerimeterWallConstruction";
+import TerrazzoFlooring from "./pages/services/TerrazzoFlooring";
+import GazeboInstallation from "./pages/services/GazeboInstallation";
+
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -32,6 +46,20 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/completed" element={<CompletedProjects />} />
           <Route path="/projects/in-progress" element={<InProgressProjects />} />
+          
+          {/* Individual Service Routes */}
+          <Route path="/services/landscaping" element={<LandscapingServices />} />
+          <Route path="/services/cabro-installation" element={<CabroInstallation />} />
+          <Route path="/services/car-parking-shades" element={<CarParkingShades />} />
+          <Route path="/services/shade-sails-canopies" element={<ShadeSailsCanopies />} />
+          <Route path="/services/privacy-screen-fence" element={<PrivacyScreenFence />} />
+          <Route path="/services/mazeras-installation" element={<MazerasInstallation />} />
+          <Route path="/services/electric-fence-installation" element={<ElectricFenceInstallation />} />
+          <Route path="/services/flowers-flower-vases" element={<FlowersFlowerVases />} />
+          <Route path="/services/pergola-design-installation" element={<PergolaDesignInstallation />} />
+          <Route path="/services/perimeter-wall-construction" element={<PerimeterWallConstruction />} />
+          <Route path="/services/terrazzo-flooring" element={<TerrazzoFlooring />} />
+          <Route path="/services/gazebo-installation" element={<GazeboInstallation />} />
         </Routes>
       </main>
 

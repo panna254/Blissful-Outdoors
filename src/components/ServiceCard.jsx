@@ -5,7 +5,23 @@ const ServiceCard = ({ title, description, image }) => {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    navigate("/services");
+    const serviceRoutes = {
+      "Landscaping Services": "/services/landscaping",
+      "Cabro Installation": "/services/cabro-installation",
+      "Car Parking Shades": "/services/car-parking-shades",
+      "Shade Sails & Canopies": "/services/shade-sails-canopies",
+      "Privacy Screen Fence": "/services/privacy-screen-fence",
+      "Mazeras Installation": "/services/mazeras-installation",
+      "Electric Fence Installation": "/services/electric-fence-installation",
+      "Flowers & Flower Vases": "/services/flowers-flower-vases",
+      "Pergola Design & Installation": "/services/pergola-design-installation",
+      "Perimeter Wall Construction": "/services/perimeter-wall-construction",
+      "Terrazzo Flooring": "/services/terrazzo-flooring",
+      "Gazebo Installation": "/services/gazebo-installation"
+    };
+    
+    const route = serviceRoutes[title] || "/services";
+    navigate(route);
   };
 
   return (

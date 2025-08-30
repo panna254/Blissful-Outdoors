@@ -97,6 +97,28 @@ const ServicesSection = () => {
     navigate(`/quotation?service=${encodeURIComponent(serviceName)}`);
   };
 
+  const handleLearnMore = (serviceName) => {
+    const serviceRoutes = {
+      "Landscaping Services": "/services/landscaping",
+      "Cabro Installation": "/services/cabro-installation",
+      "Car Parking Shades": "/services/car-parking-shades",
+      "Shade Sails & Canopies": "/services/shade-sails-canopies",
+      "Privacy Screen Fence": "/services/privacy-screen-fence",
+      "Mazeras Installation": "/services/mazeras-installation",
+      "Electric Fence Installation": "/services/electric-fence-installation",
+      "Flowers & Flower Vases": "/services/flowers-flower-vases",
+      "Pergola Design & Installation": "/services/pergola-design-installation",
+      "Perimeter Wall Construction": "/services/perimeter-wall-construction",
+      "Terrazzo Flooring": "/services/terrazzo-flooring",
+      "Gazebo Installation": "/services/gazebo-installation"
+    };
+    
+    const route = serviceRoutes[serviceName];
+    if (route) {
+      navigate(route);
+    }
+  };
+
   return (
     <section className="bg-gray-100 py-16 px-6 md:px-16 mt-20">
       <h2 className="text-3xl font-bold text-green-700 text-center mb-6">
@@ -474,12 +496,20 @@ const ServicesSection = () => {
                   </p>
                 </>
               )}
-              <button
-                onClick={() => handleQuote(service.title)}
-                className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg shadow-md transition-transform transform hover:scale-105"
-              >
-                Get a Site Survey for {service.title}
-              </button>
+              <div className="flex gap-3 mt-4">
+                <button
+                  onClick={() => handleQuote(service.title)}
+                  className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg shadow-md transition-transform transform hover:scale-105"
+                >
+                  Get Quote
+                </button>
+                <button
+                  onClick={() => handleLearnMore(service.title)}
+                  className="border border-green-600 text-green-600 hover:bg-green-50 px-5 py-2 rounded-lg shadow-md transition-colors"
+                >
+                  Learn More
+                </button>
+              </div>
             </div>
           </div>
         ))}
