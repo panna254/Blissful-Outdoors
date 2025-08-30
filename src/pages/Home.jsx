@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../components/Hero";
 import ServicesSection from "../components/ServicesSection";
+import WorkSessionVideos from "../components/WorkSessionVideos";
 import Testimonials from "../components/Testimonials";
 
 const Home = () => {
@@ -8,7 +9,7 @@ const Home = () => {
     <div>
       <Hero />
       <ServicesSection />
-      {/* Add more sections like GalleryGrid, Testimonials, etc. */}
+      <WorkSessionVideos />
       <Testimonials />
     </div>
   );
