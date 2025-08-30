@@ -132,7 +132,7 @@ const GalleryGrid = () => {
                     alt={image.alt}
                     className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
                     <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <p className="text-sm font-medium px-4">{image.alt}</p>
                     </div>

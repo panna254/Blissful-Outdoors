@@ -7,6 +7,9 @@ import { services } from "./ServicesSection";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  // Collapsible state for mobile
+  const [mobileWorkOpen, setMobileWorkOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -160,59 +163,63 @@ const Navbar = () => {
       {menuOpen && (
         <div className="md:hidden flex flex-col items-center space-y-4 py-4 bg-green-900 text-white font-medium">
           {navLinks.map((item) => {
-            // Mobile: render Our Work with two sub-links
+            // Mobile: collapsible Our Work
             if (item.toLowerCase() === "our work") {
               return (
                 <div key={item} className="w-full flex flex-col items-center">
-                  <Link
-                    to="/projects"
-                    onClick={toggleMenu}
-                    className="hover:underline underline-offset-4 decoration-green-400"
+                  <button
+                    onClick={() => setMobileWorkOpen((open) => !open)}
+                    className="flex items-center justify-center w-full px-4 py-2 focus:outline-none hover:underline underline-offset-4 decoration-green-400 text-center"
                   >
                     {item}
-                  </Link>
-                  <div className="mt-2 flex flex-col space-y-2 text-sm">
-                    <Link
-                      to="/projects/completed"
-                      onClick={toggleMenu}
-                      className="hover:underline underline-offset-4 decoration-green-400"
-                    >
-                      Completed Projects
-                    </Link>
-                    <Link
-                      to="/projects/in-progress"
-                      onClick={toggleMenu}
-                      className="hover:underline underline-offset-4 decoration-green-400"
-                    >
-                      In progress
-                    </Link>
-                  </div>
+                    <span className="ml-2">{mobileWorkOpen ? "▲" : "▼"}</span>
+                  </button>
+                  {mobileWorkOpen && (
+                    <div className="mt-2 flex flex-col space-y-2 text-sm w-full pl-6">
+                      <Link
+                        to="/projects/completed"
+                        onClick={() => { setMenuOpen(false); setMobileWorkOpen(false); }}
+                        className="hover:underline underline-offset-4 decoration-green-400"
+                      >
+                        Completed Projects
+                      </Link>
+                      <Link
+                        to="/projects/in-progress"
+                        onClick={() => { setMenuOpen(false); setMobileWorkOpen(false); }}
+                        className="hover:underline underline-offset-4 decoration-green-400"
+                      >
+                        In progress
+                      </Link>
+                    </div>
+                  )}
                 </div>
               );
             }
-            // Add dropdown for What we Do in mobile (limit to 7 major services)
+            // Mobile: collapsible What we Do
             if (item.toLowerCase() === "what we do") {
               return (
                 <div key={item} className="w-full flex flex-col items-center">
-                  <Link
-                    to="/services"
-                    onClick={toggleMenu}
-                    className="hover:underline underline-offset-4 decoration-green-400"
+                  <button
+                    onClick={() => setMobileServicesOpen((open) => !open)}
+                    className="flex items-center justify-center w-full px-4 py-2 focus:outline-none hover:underline underline-offset-4 decoration-green-400 text-center"
                   >
                     {item}
-                  </Link>
-                  <div className="mt-2 flex flex-col space-y-2 text-sm">
-                    {services.slice(0, 7).map((service) => (
-                      <Link
-                        key={service.title}
-                        to={`/services#${service.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`}
-                        onClick={toggleMenu}
-                        className="hover:underline underline-offset-4 decoration-green-400"
-                      >
-                        {service.title}
-                      </Link>
-                    ))}
-                  </div>
+                    <span className="ml-2">{mobileServicesOpen ? "▲" : "▼"}</span>
+                  </button>
+                  {mobileServicesOpen && (
+                    <div className="mt-2 flex flex-col space-y-2 text-sm w-full pl-6">
+                      {services.slice(0, 7).map((service) => (
+                        <Link
+                          key={service.title}
+                          to={`/services#${service.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`}
+                          onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); }}
+                          className="hover:underline underline-offset-4 decoration-green-400"
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
               );
             }
