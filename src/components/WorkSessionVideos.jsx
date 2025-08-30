@@ -6,35 +6,35 @@ const workSessions = [
     id: 1,
     title: "Landscaping Transformation Project",
     description: "Watch our team transform a residential garden from start to finish",
-    videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-    duration: "12:45",
+    videoId: "h7-R7oSmHT4", // Updated to custom YouTube video ID
+    thumbnail: "https://img.youtube.com/vi/h7-R7oSmHT4/maxresdefault.jpg",
+    duration: "8:02", // Corrected to match actual video length
     category: "Landscaping"
   },
   {
     id: 2,
     title: "Cabro Paving Installation Process",
     description: "Step-by-step cabro installation for a commercial driveway",
-    videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-    duration: "8:30",
+    videoId: "TbwJEy9v_eA", // Updated to custom YouTube video ID
+    thumbnail: "https://img.youtube.com/vi/TbwJEy9v_eA/maxresdefault.jpg",
+    duration: "19:53",
     category: "Paving"
   },
   {
     id: 3,
     title: "Car Shade Structure Assembly",
     description: "Professional installation of modern car parking shades",
-    videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-    duration: "15:20",
+    videoId: "qf6XrSB0-M4", // Updated to custom YouTube Shorts video ID
+    thumbnail: "https://img.youtube.com/vi/qf6XrSB0-M4/maxresdefault.jpg",
+    duration: "0:12",
     category: "Shade Solutions"
   },
   {
     id: 4,
     title: "Pergola Construction Timelapse",
     description: "Complete pergola build showcasing our craftsmanship",
-    videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+    videoId: "OgCAs4ST5zY", // Updated to custom YouTube video ID
+    thumbnail: "https://img.youtube.com/vi/OgCAs4ST5zY/maxresdefault.jpg",
     duration: "10:15",
     category: "Outdoor Structures"
   }
@@ -122,7 +122,7 @@ const WorkSessionVideos = () => {
             Want to see more of our work? Visit our YouTube channel for complete project walkthroughs.
           </p>
           <a
-            href="https://youtube.com/@blissfuloutdoors" // Replace with actual YouTube channel
+            href="https://www.youtube.com/@blissfuloutdoorsolutions" // Updated to actual YouTube channel
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105"

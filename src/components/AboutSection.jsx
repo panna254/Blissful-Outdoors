@@ -11,17 +11,50 @@ const AboutSection = () => {
       <div className="container mx-auto flex flex-col lg:flex-row min-h-screen">
         {/* Left: Full-height Image */}
         <motion.div
-          className="w-full lg:w-1/2 relative"
+          className="w-full lg:w-1/2 relative overflow-hidden"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <img
-            src={fluxImg}
-            alt="About Blissful Outdoors"
-            className="h-full w-full object-cover lg:sticky lg:top-0 lg:h-screen"
-          />
+          <motion.div
+            className="relative h-full w-full lg:sticky lg:top-0 lg:h-screen"
+            initial={{ scale: 1.1 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <img
+              src={fluxImg}
+              alt="About Blissful Outdoors"
+              className="h-full w-full object-cover rounded-r-3xl lg:rounded-r-4xl shadow-2xl"
+            />
+            {/* Gradient overlay for better text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent rounded-r-3xl lg:rounded-r-4xl" />
+            
+            {/* Floating decorative elements */}
+            <motion.div
+              className="absolute top-8 right-8 w-16 h-16 bg-green-500/20 backdrop-blur-sm rounded-full border border-green-300/30"
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+            />
+            <motion.div
+              className="absolute bottom-16 right-12 w-12 h-12 bg-blue-500/20 backdrop-blur-sm rounded-full border border-blue-300/30"
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              viewport={{ once: true }}
+            />
+            <motion.div
+              className="absolute top-1/2 left-8 w-8 h-8 bg-yellow-500/20 backdrop-blur-sm rounded-full border border-yellow-300/30"
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              viewport={{ once: true }}
+            />
+          </motion.div>
         </motion.div>
 
         {/* Right: Content */}
