@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import fluxImg from "../assets/aboutimage.jpeg";
+import aboutImg1 from "../assets/aboutimage1.jpeg";
 import missionIcon from "../assets/mission.png";
 import servicesIcon from "../assets/services.png";
 import whyUsIcon from "../assets/who.png";
@@ -8,63 +9,65 @@ import whyUsIcon from "../assets/who.png";
 const AboutSection = () => {
   return (
     <section className="py-0 bg-white mt-12 scroll-mt-24">
-      <div className="container mx-auto flex flex-col lg:flex-row min-h-screen">
-        {/* Left: Full-height Image */}
-        <motion.div
-          className="w-full lg:w-1/2 relative overflow-hidden"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
+      <div className="container mx-auto">
+        {/* Hero Section with Main Image */}
+        <div className="flex flex-col lg:flex-row min-h-screen">
+          {/* Left: Full-height Image */}
           <motion.div
-            className="relative h-full w-full lg:sticky lg:top-0 lg:h-screen"
-            initial={{ scale: 1.1 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="w-full lg:w-1/2 relative overflow-hidden"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <img
-              src={fluxImg}
-              alt="About Blissful Outdoors"
-              className="h-full w-full object-cover rounded-r-3xl lg:rounded-r-4xl shadow-2xl"
-            />
-            {/* Gradient overlay for better text contrast */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent rounded-r-3xl lg:rounded-r-4xl" />
-            
-            {/* Floating decorative elements */}
             <motion.div
-              className="absolute top-8 right-8 w-16 h-16 bg-green-500/20 backdrop-blur-sm rounded-full border border-green-300/30"
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative h-full w-full lg:sticky lg:top-0 lg:h-screen"
+              initial={{ scale: 1.1 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
               viewport={{ once: true }}
-            />
-            <motion.div
-              className="absolute bottom-16 right-12 w-12 h-12 bg-blue-500/20 backdrop-blur-sm rounded-full border border-blue-300/30"
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              viewport={{ once: true }}
-            />
-            <motion.div
-              className="absolute top-1/2 left-8 w-8 h-8 bg-yellow-500/20 backdrop-blur-sm rounded-full border border-yellow-300/30"
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              viewport={{ once: true }}
-            />
+            >
+              <img
+                src={fluxImg}
+                alt="About Blissful Outdoors"
+                className="h-full w-full object-cover rounded-r-3xl lg:rounded-r-4xl shadow-2xl"
+              />
+              {/* Gradient overlay for better text contrast */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent rounded-r-3xl lg:rounded-r-4xl" />
+              
+              {/* Floating decorative elements */}
+              <motion.div
+                className="absolute top-8 right-8 w-16 h-16 bg-green-500/20 backdrop-blur-sm rounded-full border border-green-300/30"
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: true }}
+              />
+              <motion.div
+                className="absolute bottom-16 right-12 w-12 h-12 bg-blue-500/20 backdrop-blur-sm rounded-full border border-blue-300/30"
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                viewport={{ once: true }}
+              />
+              <motion.div
+                className="absolute top-1/2 left-8 w-8 h-8 bg-yellow-500/20 backdrop-blur-sm rounded-full border border-yellow-300/30"
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                viewport={{ once: true }}
+              />
+            </motion.div>
           </motion.div>
-        </motion.div>
 
-        {/* Right: Content */}
-        <motion.div
-          className="w-full lg:w-1/2 p-8 lg:p-16 space-y-10 flex flex-col justify-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+          {/* Right: Content */}
+          <motion.div
+            className="w-full lg:w-1/2 p-8 lg:p-16 space-y-10 flex flex-col justify-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
           <h2 className="text-4xl font-bold leading-tight">
             Who We Are — Since <span className="text-green-600">2015</span>
           </h2>
@@ -146,6 +149,79 @@ const AboutSection = () => {
             </p>
           </div>
         </motion.div>
+      </div>
+
+      {/* Second Section with Additional Image */}
+      <div className="py-16 px-8 lg:px-16">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+          {/* Left: Content */}
+          <motion.div
+            className="w-full lg:w-1/2 space-y-6"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold text-green-700">
+              Our Commitment to Excellence
+            </h2>
+            <p className="text-gray-700 leading-relaxed text-lg">
+              Every project we undertake reflects our dedication to quality craftsmanship and client satisfaction. From initial consultation to final installation, we ensure every detail meets our high standards.
+            </p>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-green-50 p-4 rounded-xl">
+                <h4 className="font-semibold text-green-800 mb-2">Quality Materials</h4>
+                <p className="text-gray-600 text-sm">We source premium materials that ensure longevity and aesthetic appeal.</p>
+              </div>
+              <div className="bg-blue-50 p-4 rounded-xl">
+                <h4 className="font-semibold text-blue-800 mb-2">Expert Team</h4>
+                <p className="text-gray-600 text-sm">Our skilled professionals bring years of experience to every project.</p>
+              </div>
+              <div className="bg-yellow-50 p-4 rounded-xl">
+                <h4 className="font-semibold text-yellow-800 mb-2">Custom Solutions</h4>
+                <p className="text-gray-600 text-sm">Tailored designs that perfectly match your vision and requirements.</p>
+              </div>
+              <div className="bg-purple-50 p-4 rounded-xl">
+                <h4 className="font-semibold text-purple-800 mb-2">Timely Delivery</h4>
+                <p className="text-gray-600 text-sm">We respect your time and deliver projects within agreed timelines.</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right: Second Image */}
+          <motion.div
+            className="w-full lg:w-1/2"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="relative">
+              <img
+                src={aboutImg1}
+                alt="Blissful Outdoors Team at Work"
+                className="w-full h-96 object-cover rounded-2xl shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-2xl" />
+              
+              {/* Overlay Content */}
+              <div className="absolute bottom-6 left-6 text-white">
+                <h3 className="text-xl font-bold mb-2">Professional Excellence</h3>
+                <p className="text-sm opacity-90">Delivering quality outdoor solutions across Kenya</p>
+              </div>
+
+              {/* Decorative Elements */}
+              <motion.div
+                className="absolute top-6 right-6 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full border border-white/30"
+                initial={{ opacity: 0, rotate: 0 }}
+                whileInView={{ opacity: 1, rotate: 360 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                viewport={{ once: true }}
+              />
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
