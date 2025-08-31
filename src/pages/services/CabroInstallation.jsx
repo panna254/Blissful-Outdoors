@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import cabroImg from "../../assets/cabro.jpeg";
+import SEOHelmet from "../../components/SEOHelmet";
 
 const CabroInstallation = () => {
   const navigate = useNavigate();
@@ -11,6 +12,12 @@ const CabroInstallation = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
+      <SEOHelmet 
+        title="Cabro Installation Services - Durable Paving Solutions | Blissful Outdoors"
+        description="Professional cabro installation for driveways, parking areas, and walkways in Kenya. Durable, colorfast blocks with expert installation. Get your free quote today!"
+        keywords="cabro installation Kenya, cabro paving, driveway paving, parking area paving, walkway installation, interlocking blocks Kenya"
+        url="https://blissfuloutdoors.com/services/cabro-installation"
+      />
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
