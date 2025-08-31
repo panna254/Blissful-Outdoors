@@ -76,12 +76,54 @@ const Footer = () => {
               Our Services
             </h4>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li>Landscaping</li>
-              <li>Car Parking Shades</li>
-              <li>Cabro Installation</li>
-              <li>Shade Sails & Canopies</li>
-              <li>Privacy Screens</li>
-              <li>Electric Fences</li>
+              <li>
+                <Link
+                  to="/services/landscaping"
+                  className="hover:text-green-400 transition-colors"
+                >
+                  Landscaping
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services/car-parking-shades"
+                  className="hover:text-green-400 transition-colors"
+                >
+                  Car Parking Shades
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services/cabro-installation"
+                  className="hover:text-green-400 transition-colors"
+                >
+                  Cabro Installation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services/shade-sails-canopies"
+                  className="hover:text-green-400 transition-colors"
+                >
+                  Shade Sails & Canopies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services/privacy-screen-fence"
+                  className="hover:text-green-400 transition-colors"
+                >
+                  Privacy Screens
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services/electric-fence-installation"
+                  className="hover:text-green-400 transition-colors"
+                >
+                  Electric Fences
+                </Link>
+              </li>
             </ul>
           </div>
 
