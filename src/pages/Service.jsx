@@ -173,7 +173,7 @@ const ServicesSection = () => {
                     <li>Bumpy lawns that aren’t comfortable for sitting, basking, or play</li>
                     <li>Mixed or drying grass needing a uniform, thriving lawn</li>
                     <li>Spaces that need ornamental flowers to elevate beauty and attract birds</li>
-                    <li>Areas needing defined walking paths (e.g., house ↔ gazebo ↔ cleaning area)</li>
+                    <li>Areas needing defined walking paths (e.g., house to gazebo to cleaning area)</li>
                   </ul>
                   <h4 className="font-semibold text-green-700 mb-2">Pricing (Landscaping)</h4>
                   <ul className="list-disc pl-6 text-gray-600 space-y-1 mb-4">
@@ -197,8 +197,8 @@ const ServicesSection = () => {
                   </p>
                   <ul className="list-disc pl-6 text-gray-600 space-y-1 mb-4">
                     <li>Patterns, designs, and sizes for enhanced aesthetics</li>
-                    <li>Heavy‑duty sub‑base prep for durability under constant loads</li>
-                    <li>Colourfast, low‑breakage blocks designed to last</li>
+                    <li>Heavy-duty sub-base prep for durability under constant loads</li>
+                    <li>Colourfast, low-breakage blocks designed to last</li>
                   </ul>
                   <h4 className="font-semibold text-green-700 mb-2">Where to install Cabros</h4>
                   <ul className="list-disc pl-6 text-gray-600 space-y-1 mb-4">
@@ -221,7 +221,7 @@ const ServicesSection = () => {
                   </p>
                   <h4 className="font-semibold text-green-700 mb-2">Pricing (Car Parking Shade)</h4>
                   <p className="text-gray-600 mb-2">
-                    By square meters (SQM), we determine how many cars will fit. Standard car size: 2.5m × 5m. Our design ensures complete vehicle coverage, even with doors fully open.
+                    By square meters (SQM), we determine how many cars will fit. Standard car size: 2.5m x 5m. Our design ensures complete vehicle coverage, even with doors fully open.
                   </p>
                   <h4 className="font-semibold text-green-700 mb-2">Design Options</h4>
                   <ul className="list-disc pl-6 text-gray-600 space-y-1 mb-4">
@@ -244,7 +244,7 @@ const ServicesSection = () => {
                   <h4 className="font-semibold text-green-700 mb-2">Who needs Shade Sails & Canopies?</h4>
                   <ul className="list-disc pl-6 text-gray-600 space-y-1 mb-4">
                     <li>Do you plan to come up with a car wash that accommodates more than 4 or 5 cars at a time, basically because the space is available? A Canopy would be ideal as it will carry the essentials that come with a Canopy</li>
-                    <li>If you are planning on starting a restaurant or a club and you are looking to cover the balconies in a modern style that is not the ordinary roofing, what is it? Ask for a Shade Sail. They are beautiful on the outside, and that tells you what—this by default invites customers inside. Buy a Shade Sail from us</li>
+                    <li>If you are planning on starting a restaurant or a club and you are looking to cover the balconies in a modern style that is not the ordinary roofing, what is it? Ask for a Shade Sail. They are beautiful on the outside, and that tells you what - this by default invites customers inside. Buy a Shade Sail from us</li>
                     <li>Let's say you have a property that needs an extended roofing, but in style. This roofing, for instance, is to go to the balcony areas or your veranda. Look to have a Shade Sail installed in these areas by us</li>
                   </ul>
                   <h4 className="font-semibold text-green-700 mb-2">Key Benefits</h4>
@@ -299,7 +299,7 @@ const ServicesSection = () => {
                   <ul className="list-disc pl-6 text-gray-600 space-y-1 mb-4">
                     <li>If you have a fence, but your fence plantation has not grown fully to offer the privacy</li>
                     <li>If other properties beside yours have outshone your privacy in terms of height, design, and overall appearance</li>
-                    <li>If you're looking to separate the garden area from the house in your home</li>
+                    <li>If you are looking to separate the garden area from the house in your home</li>
                     <li>For businesses like restaurants or hotels that need to separate amenities like swimming pools and block them from sight and passersby</li>
                   </ul>
                   <h4 className="font-semibold text-green-700 mb-2">Key Features</h4>
@@ -324,7 +324,7 @@ const ServicesSection = () => {
                   <h4 className="font-semibold text-green-700 mb-2">Who needs a Mazeras Installation?</h4>
                   <ul className="list-disc pl-6 text-gray-600 space-y-1 mb-4">
                     <li>If you want to move beyond basic plastering and give your building's outer walls a modern, decorative finish</li>
-                    <li>If you're looking to enhance walking paths around your property that are currently just concrete</li>
+                    <li>If you are looking to enhance walking paths around your property that are currently just concrete</li>
                     <li>If you want to add unique attractiveness and character to your compound or premises</li>
                     <li>For properties that need a 21st-century upgrade in exterior decoration and aesthetics</li>
                   </ul>
@@ -453,7 +453,7 @@ const ServicesSection = () => {
                   </ul>
                   <h4 className="font-semibold text-green-700 mb-2">Key Benefits</h4>
                   <ul className="list-disc pl-6 text-gray-600 space-y-1 mb-4">
-                    <li>Space-efficient outdoor shelter that doesn't occupy too much area</li>
+                    <li>Space-efficient outdoor shelter that does not occupy too much area</li>
                     <li>Highly customizable designs to serve specific purposes</li>
                     <li>Versatile functionality for meetings, dining, entertainment, and relaxation</li>
                     <li>Adds unique value and character to any property</li>
