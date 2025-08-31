@@ -70,6 +70,33 @@ const Navbar = () => {
           }`}
         >
           {navLinks.map((item) => {
+            // Special-case dropdown for Who We Are
+            if (item.toLowerCase() === "who we are") {
+              return (
+                <div key={item} className="relative group inline-block">
+                  <Link
+                    to="/about"
+                    className="hover:underline underline-offset-4 decoration-green-500 transition duration-200"
+                  >
+                    {item}
+                  </Link>
+                  <div className="absolute left-0 top-full z-50 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition ease-out duration-150 bg-white shadow-lg rounded-md py-2 w-56 border border-gray-100 pointer-events-none group-hover:pointer-events-auto">
+                    <Link
+                      to="/about/why-choose-us"
+                      className="block px-4 py-2 text-sm hover:bg-gray-50"
+                    >
+                      Why Choose Us?
+                    </Link>
+                    <Link
+                      to="/about/downloads"
+                      className="block px-4 py-2 text-sm hover:bg-gray-50"
+                    >
+                      Downloads
+                    </Link>
+                  </div>
+                </div>
+              );
+            }
             // Special-case dropdown for Our Work
             if (item.toLowerCase() === "our work") {
               return (
@@ -172,8 +199,8 @@ const Navbar = () => {
       {menuOpen && (
         <div className="md:hidden flex flex-col items-center space-y-4 py-4 bg-green-900 text-white font-medium">
           {navLinks.map((item) => {
-            // Mobile: collapsible Our Work
-            if (item.toLowerCase() === "our work") {
+            // Mobile: collapsible Who We Are
+            if (item.toLowerCase() === "who we are") {
               return (
                 <div key={item} className="w-full flex flex-col items-center">
                   <button
@@ -186,15 +213,47 @@ const Navbar = () => {
                   {mobileWorkOpen && (
                     <div className="mt-2 flex flex-col space-y-2 text-sm w-full pl-6">
                       <Link
-                        to="/projects/completed"
+                        to="/about/why-choose-us"
                         onClick={() => { setMenuOpen(false); setMobileWorkOpen(false); }}
+                        className="hover:underline underline-offset-4 decoration-green-400"
+                      >
+                        Why Choose Us?
+                      </Link>
+                      <Link
+                        to="/about/downloads"
+                        onClick={() => { setMenuOpen(false); setMobileWorkOpen(false); }}
+                        className="hover:underline underline-offset-4 decoration-green-400"
+                      >
+                        Downloads
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              );
+            }
+            // Mobile: collapsible Our Work
+            if (item.toLowerCase() === "our work") {
+              return (
+                <div key={item} className="w-full flex flex-col items-center">
+                  <button
+                    onClick={() => setMobileServicesOpen((open) => !open)}
+                    className="flex items-center justify-center w-full px-4 py-2 focus:outline-none hover:underline underline-offset-4 decoration-green-400 text-center"
+                  >
+                    {item}
+                    <span className="ml-2">{mobileServicesOpen ? "▲" : "▼"}</span>
+                  </button>
+                  {mobileServicesOpen && (
+                    <div className="mt-2 flex flex-col space-y-2 text-sm w-full pl-6">
+                      <Link
+                        to="/projects/completed"
+                        onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); }}
                         className="hover:underline underline-offset-4 decoration-green-400"
                       >
                         Completed Projects
                       </Link>
                       <Link
                         to="/projects/in-progress"
-                        onClick={() => { setMenuOpen(false); setMobileWorkOpen(false); }}
+                        onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); }}
                         className="hover:underline underline-offset-4 decoration-green-400"
                       >
                         In progress

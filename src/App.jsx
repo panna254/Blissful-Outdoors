@@ -15,6 +15,8 @@ import Quotation from "./pages/Quotation";
 import Projects from "./pages/Projects";
 import CompletedProjects from "./pages/CompletedProjects";
 import InProgressProjects from "./pages/InProgressProjects";
+import WhyChooseUs from "./pages/WhyChooseUs";
+import Downloads from "./pages/Downloads";
 
 // Import individual service pages
 import LandscapingServices from "./pages/services/LandscapingServices";
@@ -46,6 +48,8 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/completed" element={<CompletedProjects />} />
           <Route path="/projects/in-progress" element={<InProgressProjects />} />
+          <Route path="/about/why-choose-us" element={<WhyChooseUs />} />
+          <Route path="/about/downloads" element={<Downloads />} />
           
           {/* Individual Service Routes */}
           <Route path="/services/landscaping" element={<LandscapingServices />} />
