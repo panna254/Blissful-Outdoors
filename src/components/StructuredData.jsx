@@ -7,16 +7,17 @@ const StructuredData = () => {
     "name": "Blissful Outdoor Solutions",
     "description": "Professional landscaping, cabro installation, shade structures, and outdoor services across Kenya",
     "url": "https://blissfuloutdoors.com",
-    "telephone": "+254-XXX-XXXXX", // Replace with actual phone
-    "email": "info@blissfuloutdoors.com", // Replace with actual email
+    "telephone": "+254715812430",
+    "email": "info@blissfuloutdoors.com",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "KE",
-      "addressRegion": "Kenya"
+      "addressRegion": "Nairobi",
+      "addressLocality": "Nairobi"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "-1.2921", // Replace with actual coordinates
+      "latitude": "-1.2921",
       "longitude": "36.8219"
     },
     "openingHours": "Mo-Fr 08:00-17:00, Sa 08:00-15:00",
