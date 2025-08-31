@@ -45,13 +45,22 @@ const Navbar = () => {
             alt="Blissful Logo"
             className="h-10 sm:h-12 md:h-14 w-auto"
           />
-          <span
-            className={`font-bold text-lg tracking-wide hidden sm:inline ${
-              isScrolled ? "text-green-800" : "text-black"
-            }`}
-          >
-            Blissful Outdoors
-          </span>
+          <div className="hidden sm:block">
+            <span
+              className={`font-bold text-lg tracking-wide ${
+                isScrolled ? "text-green-800" : "text-black"
+              }`}
+            >
+              Blissful Outdoors
+            </span>
+            <p
+              className={`text-xs font-medium italic leading-tight ${
+                isScrolled ? "text-green-600" : "text-gray-700"
+              }`}
+            >
+              We Transform and add value to your outdoor living areas
+            </p>
+          </div>
         </Link>
 
         {/* Desktop Links */}

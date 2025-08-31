@@ -100,8 +100,8 @@ const Hero = () => {
                   </span>
                 </h1>
                 <p className="text-lg md:text-xl text-white/90 mb-8">
-                  We turn your outdoor space into paradise. <br /> Landscaping
-                  tailored to your dream.
+                  We Transform and add value to your outdoor living areas. <br /> 
+                  Professional landscaping tailored to your dream.
                 </p>
                 <button className="px-6 py-3 bg-transparent text-white border border-green-600 rounded-full font-semibold hover:bg-green-600 hover:text-white transition-all duration-200">
                   Explore Services

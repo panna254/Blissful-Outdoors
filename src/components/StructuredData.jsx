@@ -5,7 +5,7 @@ const StructuredData = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Blissful Outdoor Solutions",
-    "description": "Professional landscaping, cabro installation, shade structures, and outdoor services across Kenya",
+    "description": "We Transform and add value to your outdoor living areas. Professional landscaping, cabro installation, shade structures, and outdoor services across Kenya",
     "url": "https://blissfuloutdoorsolutions.com",
     "telephone": "+254715812430",
     "email": "info@blissfuloutdoorsolutions.com",
