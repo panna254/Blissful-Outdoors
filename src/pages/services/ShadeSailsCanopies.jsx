@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import shadeSailsImg from "../../assets/shadesail.jpeg";
+import shadeSailImg from "../../assets/shadesail.jpeg";
+import SEOHelmet from "../../components/SEOHelmet";
 
 const ShadeSailsCanopies = () => {
   const navigate = useNavigate();
@@ -10,8 +11,15 @@ const ShadeSailsCanopies = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
-      <div className="max-w-6xl mx-auto">
+    <>
+      <SEOHelmet 
+        title="Shade Sails & Canopies Kenya | Modern Outdoor Shade Solutions"
+        description="Professional shade sails and canopy installation in Kenya. Modern shade solutions for outdoor spaces. Custom designs for residential and commercial properties."
+        keywords="shade sails Kenya, outdoor canopies, shade structures, sun protection, modern shade solutions"
+        canonicalUrl="https://blissfuloutdoorsolutions.com/services/shade-sails-canopies"
+      />
+      <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
+        <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-green-700 mb-4">
@@ -129,8 +137,9 @@ const ShadeSailsCanopies = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

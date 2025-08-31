@@ -6,9 +6,9 @@ const StructuredData = () => {
     "@type": "LocalBusiness",
     "name": "Blissful Outdoor Solutions",
     "description": "Professional landscaping, cabro installation, shade structures, and outdoor services across Kenya",
-    "url": "https://blissfuloutdoors.com",
+    "url": "https://blissfuloutdoorsolutions.com",
     "telephone": "+254715812430",
-    "email": "info@blissfuloutdoors.com",
+    "email": "info@blissfuloutdoorsolutions.com",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "KE",
@@ -70,8 +70,8 @@ const StructuredData = () => {
       "reviewCount": "127"
     },
     "sameAs": [
-      "https://www.facebook.com/blissfuloutdoors", // Replace with actual social links
-      "https://www.instagram.com/blissfuloutdoors",
+      "https://www.facebook.com/blissfuloutdoorsolutions",
+      "https://www.instagram.com/blissfuloutdoorsolutions",
       "https://www.youtube.com/@blissfuloutdoorsolutions"
     ]
   };

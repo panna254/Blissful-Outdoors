@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import pergolaImg from "../../assets/pergola.jpeg";
+import SEOHelmet from "../../components/SEOHelmet";
 
 const PergolaDesignInstallation = () => {
   const navigate = useNavigate();
@@ -10,8 +11,15 @@ const PergolaDesignInstallation = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
-      <div className="max-w-6xl mx-auto">
+    <>
+      <SEOHelmet 
+        title="Pergola Design & Installation Kenya | Custom Outdoor Structures"
+        description="Professional pergola design and installation in Kenya. Custom outdoor structures for shade and style. Expert craftsmanship for residential and commercial properties."
+        keywords="pergola installation Kenya, outdoor structures, custom pergola design, shade structures, garden pergola"
+        canonicalUrl="https://blissfuloutdoorsolutions.com/services/pergola-design-installation"
+      />
+      <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
+        <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-green-700 mb-4">
@@ -148,8 +156,9 @@ const PergolaDesignInstallation = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -223,7 +223,10 @@ const QuotationForm = () => {
 
   const renderStep1 = () => (
     <div className="space-y-6">
-      <h3 className="text-xl font-semibold text-green-700 mb-4">Personal Information</h3>
+      <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded mb-6">
+        <h3 className="text-xl font-semibold text-green-700 mb-2">Step 1: Personal Information</h3>
+        <p className="text-green-700 text-sm">Please provide your contact details so we can reach you with your quotation and schedule your site survey.</p>
+      </div>
       
       <div>
         <label className="block text-gray-700 font-medium mb-2">Full Name *</label>
@@ -277,9 +280,14 @@ const QuotationForm = () => {
         </select>
         {errors.location && <p className="text-red-500 text-sm mt-1">{errors.location}</p>}
         {formData.location && (
-          <p className="text-green-700 mt-2">
-            Survey Cost: <strong>KES {surveyCosts[formData.location].toLocaleString()}</strong>
-          </p>
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mt-2">
+            <p className="text-blue-800 text-sm mb-1">
+              <strong>Survey Cost for {formData.location}: KES {surveyCosts[formData.location].toLocaleString()}</strong>
+            </p>
+            <p className="text-blue-600 text-xs">
+              This fee is fully deductible from your final project cost if you proceed with us.
+            </p>
+          </div>
         )}
       </div>
 
@@ -298,7 +306,10 @@ const QuotationForm = () => {
 
   const renderStep2 = () => (
     <div className="space-y-6">
-      <h3 className="text-xl font-semibold text-green-700 mb-4">Project Information</h3>
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-6">
+        <h3 className="text-xl font-semibold text-blue-700 mb-2">Step 2: Project Information</h3>
+        <p className="text-blue-700 text-sm">Tell us about your project requirements so we can provide the most accurate quotation.</p>
+      </div>
       
       <div>
         <label className="block text-gray-700 font-medium mb-2">Service Required *</label>
@@ -385,7 +396,10 @@ const QuotationForm = () => {
 
   const renderStep3 = () => (
     <div className="space-y-6">
-      <h3 className="text-xl font-semibold text-green-700 mb-4">Additional Details</h3>
+      <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded mb-6">
+        <h3 className="text-xl font-semibold text-yellow-700 mb-2">Step 3: Additional Details</h3>
+        <p className="text-yellow-700 text-sm">Provide additional information to help us understand your vision and deliver the perfect solution.</p>
+      </div>
       
       <div>
         <label className="block text-gray-700 font-medium mb-2">Project Description</label>
@@ -394,7 +408,7 @@ const QuotationForm = () => {
           rows="4"
           value={formData.projectDescription}
           onChange={(e) => handleInputChange('projectDescription', e.target.value)}
-          placeholder="Describe your project in detail..."
+          placeholder="Describe your vision: What do you want to achieve? Include details about style preferences, materials, colors, and any specific features you have in mind..."
         />
       </div>
 
@@ -405,7 +419,7 @@ const QuotationForm = () => {
           rows="3"
           value={formData.specificRequirements}
           onChange={(e) => handleInputChange('specificRequirements', e.target.value)}
-          placeholder="Any specific requirements or preferences..."
+          placeholder="Any specific requirements: accessibility needs, drainage concerns, existing structures to work around, maintenance preferences, etc..."
         />
       </div>
 
@@ -471,9 +485,14 @@ const QuotationForm = () => {
 
   return (
     <div className="bg-white py-12 px-6 md:px-20">
-      <h2 className="text-3xl font-semibold text-center mb-8">
-        Get a Detailed Quotation
-      </h2>
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-green-700 mb-4">
+          Request Your Professional Quotation
+        </h2>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          Complete our comprehensive form to receive an accurate, detailed quotation for your outdoor project
+        </p>
+      </div>
 
       {!submitted ? (
         <div className="max-w-4xl mx-auto">

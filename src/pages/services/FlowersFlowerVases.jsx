@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import flowersImg from "../../assets/flowers.jpeg";
+import SEOHelmet from "../../components/SEOHelmet";
 
 const FlowersFlowerVases = () => {
   const navigate = useNavigate();
@@ -10,8 +11,15 @@ const FlowersFlowerVases = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
-      <div className="max-w-6xl mx-auto">
+    <>
+      <SEOHelmet 
+        title="Flowers & Flower Vases Kenya | Garden Decoration & Landscaping"
+        description="Professional flower installation and decorative vases in Kenya. Beautiful garden decoration, flower arrangements, and ornamental landscaping services."
+        keywords="flowers Kenya, flower vases, garden decoration, ornamental plants, landscaping flowers, decorative gardening"
+        canonicalUrl="https://blissfuloutdoorsolutions.com/services/flowers-flower-vases"
+      />
+      <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
+        <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-green-700 mb-4">
@@ -150,8 +158,9 @@ const FlowersFlowerVases = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

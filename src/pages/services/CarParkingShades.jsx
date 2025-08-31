@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import carShadeImg from "../../assets/carshade.jpeg";
+import SEOHelmet from "../../components/SEOHelmet";
 
 const CarParkingShades = () => {
   const navigate = useNavigate();
@@ -10,8 +11,15 @@ const CarParkingShades = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
-      <div className="max-w-6xl mx-auto">
+    <>
+      <SEOHelmet 
+        title="Car Parking Shades Kenya | Vehicle Protection & Shade Structures"
+        description="Professional car parking shade installation in Kenya. Protect your vehicles with durable shade structures. Custom designs for residential and commercial properties."
+        keywords="car parking shades Kenya, vehicle shade structures, parking canopies, car protection, shade installation"
+        canonicalUrl="https://blissfuloutdoorsolutions.com/services/car-parking-shades"
+      />
+      <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
+        <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-green-700 mb-4">
@@ -118,8 +126,9 @@ const CarParkingShades = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

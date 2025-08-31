@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import terrazzoImg from "../../assets/terrazzo.jpeg";
+import SEOHelmet from "../../components/SEOHelmet";
 
 const TerrazzoFlooring = () => {
   const navigate = useNavigate();
@@ -10,8 +11,15 @@ const TerrazzoFlooring = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
-      <div className="max-w-6xl mx-auto">
+    <>
+      <SEOHelmet 
+        title="Terrazzo Flooring Kenya | Durable Floor Solutions"
+        description="Professional terrazzo flooring installation in Kenya. Durable, low-maintenance flooring for residential and commercial properties. Expert installation and finishing."
+        keywords="terrazzo flooring Kenya, durable flooring, commercial flooring, terrazzo installation, floor solutions"
+        canonicalUrl="https://blissfuloutdoorsolutions.com/services/terrazzo-flooring"
+      />
+      <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
+        <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-green-700 mb-4">
@@ -136,8 +144,9 @@ const TerrazzoFlooring = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

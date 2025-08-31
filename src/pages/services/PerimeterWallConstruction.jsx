@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import perimeterWallImg from "../../assets/pwall.jpeg";
+import SEOHelmet from "../../components/SEOHelmet";
 
 const PerimeterWallConstruction = () => {
   const navigate = useNavigate();
@@ -10,8 +11,15 @@ const PerimeterWallConstruction = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
-      <div className="max-w-6xl mx-auto">
+    <>
+      <SEOHelmet 
+        title="Perimeter Wall Construction Kenya | Boundary Walls & Security"
+        description="Professional perimeter wall construction in Kenya. Secure boundary walls for residential and commercial properties. Durable construction and expert craftsmanship."
+        keywords="perimeter wall Kenya, boundary wall construction, security walls, property walls, wall construction"
+        canonicalUrl="https://blissfuloutdoorsolutions.com/services/perimeter-wall-construction"
+      />
+      <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
+        <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-green-700 mb-4">
@@ -133,8 +141,9 @@ const PerimeterWallConstruction = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import gazeboImg from "../../assets/gazebo.jpeg";
+import SEOHelmet from "../../components/SEOHelmet";
 
 const GazeboInstallation = () => {
   const navigate = useNavigate();
@@ -10,8 +11,15 @@ const GazeboInstallation = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
-      <div className="max-w-6xl mx-auto">
+    <>
+      <SEOHelmet 
+        title="Gazebo Installation Kenya | Outdoor Pavilions & Garden Structures"
+        description="Professional gazebo installation in Kenya. Custom outdoor pavilions and garden structures for relaxation and entertainment. Expert craftsmanship and design."
+        keywords="gazebo installation Kenya, outdoor pavilion, garden structures, gazebo construction, outdoor shelter"
+        canonicalUrl="https://blissfuloutdoorsolutions.com/services/gazebo-installation"
+      />
+      <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
+        <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-green-700 mb-4">
@@ -140,8 +148,9 @@ const GazeboInstallation = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

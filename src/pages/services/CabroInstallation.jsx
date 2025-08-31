@@ -16,7 +16,7 @@ const CabroInstallation = () => {
         title="Cabro Installation Services - Durable Paving Solutions | Blissful Outdoors"
         description="Professional cabro installation for driveways, parking areas, and walkways in Kenya. Durable, colorfast blocks with expert installation. Get your free quote today!"
         keywords="cabro installation Kenya, cabro paving, driveway paving, parking area paving, walkway installation, interlocking blocks Kenya"
-        url="https://blissfuloutdoors.com/services/cabro-installation"
+        canonicalUrl="https://blissfuloutdoorsolutions.com/services/cabro-installation"
       />
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}

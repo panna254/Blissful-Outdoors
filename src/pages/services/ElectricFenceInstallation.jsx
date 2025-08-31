@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import electricFenceImg from "../../assets/electricfence.jpeg";
+import SEOHelmet from "../../components/SEOHelmet";
 
 const ElectricFenceInstallation = () => {
   const navigate = useNavigate();
@@ -10,8 +11,15 @@ const ElectricFenceInstallation = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
-      <div className="max-w-6xl mx-auto">
+    <>
+      <SEOHelmet 
+        title="Electric Fence Installation Kenya | Security Fencing Solutions"
+        description="Professional electric fence installation in Kenya. Secure your property with reliable electric fencing systems. Expert installation and maintenance services."
+        keywords="electric fence Kenya, security fencing, electric fence installation, property security, perimeter security"
+        canonicalUrl="https://blissfuloutdoorsolutions.com/services/electric-fence-installation"
+      />
+      <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
+        <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-green-700 mb-4">
@@ -128,8 +136,9 @@ const ElectricFenceInstallation = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import landscapingImg from "../../assets/landscaping.jpeg";
+import SEOHelmet from "../../components/SEOHelmet";
 
 const LandscapingServices = () => {
   const navigate = useNavigate();
@@ -10,8 +11,15 @@ const LandscapingServices = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
-      <div className="max-w-6xl mx-auto">
+    <>
+      <SEOHelmet 
+        title="Professional Landscaping Services Kenya | Garden Design & Transformation"
+        description="Expert landscaping services in Kenya. Garden design, turf laying, flower planting, walkway installation. Transform your outdoor space with professional landscaping."
+        keywords="landscaping Kenya, garden design, turf laying, flower planting, walkway installation, outdoor transformation, lawn installation"
+        canonicalUrl="https://blissfuloutdoorsolutions.com/services/landscaping"
+      />
+      <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
+        <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-green-700 mb-4">
@@ -121,8 +129,9 @@ const LandscapingServices = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

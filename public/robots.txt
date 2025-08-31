@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://blissfuloutdoors.com/sitemap.xml
+Sitemap: https://blissfuloutdoorsolutions.com/sitemap.xml
 
 # Disallow crawling of admin or private areas (if any)
 Disallow: /admin/

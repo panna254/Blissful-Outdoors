@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import privacyScreenImg from "../../assets/privacyscreens.jpeg";
+import privacyFenceImg from "../../assets/privacyscreens.jpeg";
+import SEOHelmet from "../../components/SEOHelmet";
 
 const PrivacyScreenFence = () => {
   const navigate = useNavigate();
@@ -10,8 +11,15 @@ const PrivacyScreenFence = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
-      <div className="max-w-6xl mx-auto">
+    <>
+      <SEOHelmet 
+        title="Privacy Screen Fence Kenya | Decorative Fencing Solutions"
+        description="Professional privacy screen fence installation in Kenya. Decorative fencing for privacy and style. Custom designs for residential and commercial properties."
+        keywords="privacy fence Kenya, screen fencing, decorative fence, privacy solutions, boundary fencing"
+        canonicalUrl="https://blissfuloutdoorsolutions.com/services/privacy-screen-fence"
+      />
+      <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
+        <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-green-700 mb-4">
@@ -122,8 +130,9 @@ const PrivacyScreenFence = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

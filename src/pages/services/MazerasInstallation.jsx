@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import mazerasImg from "../../assets/mazeras.jpeg";
+import SEOHelmet from "../../components/SEOHelmet";
 
 const MazerasInstallation = () => {
   const navigate = useNavigate();
@@ -10,8 +11,15 @@ const MazerasInstallation = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
-      <div className="max-w-6xl mx-auto">
+    <>
+      <SEOHelmet 
+        title="Mazeras Stone Installation Kenya | Natural Stone Paving"
+        description="Professional mazeras stone installation in Kenya. Durable natural stone paving for driveways, walkways, and outdoor spaces. Expert craftsmanship guaranteed."
+        keywords="mazeras stone Kenya, natural stone paving, stone installation, driveway paving, walkway stones"
+        canonicalUrl="https://blissfuloutdoorsolutions.com/services/mazeras-installation"
+      />
+      <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
+        <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-green-700 mb-4">
@@ -130,8 +138,9 @@ const MazerasInstallation = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
