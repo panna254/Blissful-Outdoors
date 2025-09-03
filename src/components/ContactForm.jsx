@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaFacebook, FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
@@ -150,6 +150,25 @@ const ContactForm = () => {
               <div>
                 <p className="font-semibold mb-2">Location:</p>
                 <p>Ruiru, Kiambu County, Kenya</p>
+              </div>
+            </div>
+
+            {/* Social Media */}
+            <div className="mt-8">
+              <p className="font-semibold mb-4">Follow Us:</p>
+              <div className="flex space-x-4">
+                <a href="https://www.facebook.com/blissfuloutdoorsolutions" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-300 transition-colors">
+                  <FaFacebook className="text-2xl" />
+                </a>
+                <a href="https://www.instagram.com/blissful_outdoorsolutions/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-300 transition-colors">
+                  <FaInstagram className="text-2xl" />
+                </a>
+                <a href="https://www.youtube.com/@blissfuloutdoorsolutions" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-300 transition-colors">
+                  <FaYoutube className="text-2xl" />
+                </a>
+                <a href="https://www.tiktok.com/@blissfuloutdoorsolutions" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-300 transition-colors">
+                  <FaTiktok className="text-2xl" />
+                </a>
               </div>
             </div>
           </div>

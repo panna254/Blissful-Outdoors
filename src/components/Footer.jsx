@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaWhatsapp, FaInstagram, FaFacebook, FaYoutube, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaFacebook, FaYoutube, FaEnvelope, FaPhone, FaMapMarkerAlt, FaTiktok } from "react-icons/fa";
 import logo from "../assets/logo.png";
 
 const Footer = () => {
@@ -20,6 +20,7 @@ const Footer = () => {
     { name: "Facebook", url: "https://www.facebook.com/blissfuloutdoorsolutions", icon: FaFacebook },
     { name: "Instagram", url: "https://www.instagram.com/blissful_outdoorsolutions/", icon: FaInstagram },
     { name: "YouTube", url: "https://www.youtube.com/@blissfuloutdoorsolutions", icon: FaYoutube },
+    { name: "TikTok", url: "https://www.tiktok.com/@blissfuloutdoorsolutions", icon: FaTiktok },
     { name: "WhatsApp", url: "https://wa.me/254741612080", icon: FaWhatsapp },
   ];
 
