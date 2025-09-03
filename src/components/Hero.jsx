@@ -96,7 +96,7 @@ const Hero = () => {
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
                   <span className="block">Welcome to</span>
                   <span className="block text-green-500">
-                    Blissful Outdoors Solutions
+                    Blissful Outdoor Solutions
                   </span>
                 </h1>
                 <p className="text-lg md:text-xl text-white/90 mb-8">
@@ -172,7 +172,7 @@ const Hero = () => {
       {currentImageIndex !== 0 && (
         <div className="pointer-events-none absolute top-8 left-1/2 -translate-x-1/2 z-20 text-center">
           <h1 className="text-white text-3xl md:text-5xl font-black tracking-tight drop-shadow-xl">
-            Blissful Outdoors Services
+            Blissful Outdoor Solutions
           </h1>
         </div>
       )}

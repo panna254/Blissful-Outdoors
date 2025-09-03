@@ -51,7 +51,7 @@ const Navbar = () => {
                 isScrolled ? "text-green-800" : "text-black"
               }`}
             >
-              Blissful Outdoors
+              Blissful Outdoor Solutions
             </span>
             <p
               className={`text-xs font-medium italic leading-tight ${

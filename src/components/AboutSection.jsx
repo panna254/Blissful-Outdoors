@@ -26,7 +26,7 @@ const AboutSection = () => {
           >
             <img
               src={fluxImg}
-              alt="About Blissful Outdoors"
+              alt="About Blissful Outdoor Solutions"
               className="h-full w-full object-cover rounded-r-3xl lg:rounded-r-4xl shadow-2xl"
             />
             {/* Gradient overlay for better text contrast */}

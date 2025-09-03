@@ -33,12 +33,12 @@ const Footer = () => {
             <div className="flex items-center space-x-3 mb-4">
               <img
                 src={logo}
-                alt="Blissful Outdoors Logo"
+                alt="Blissful Outdoor Solutions Logo"
                 className="h-12 w-auto"
               />
               <div>
                 <h3 className="text-xl font-bold text-green-400">
-                  Blissful Outdoors
+                  Blissful Outdoor Solutions
                 </h3>
                 <p className="text-sm text-gray-300">
                   Transforming outdoor living areas since 2015

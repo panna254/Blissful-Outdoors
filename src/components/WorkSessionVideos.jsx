@@ -60,7 +60,7 @@ const WorkSessionVideos = () => {
             Watch Our Work in Action
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See the quality and professionalism of Blissful Outdoors through our work session videos
+            See the quality and professionalism of Blissful Outdoor Solutions through our work session videos
           </p>
         </div>
 

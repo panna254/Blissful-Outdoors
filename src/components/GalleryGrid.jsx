@@ -97,7 +97,7 @@ const GalleryGrid = () => {
           Project Gallery
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Explore our completed projects and see the quality craftsmanship that sets Blissful Outdoors apart
+          Explore our completed projects and see the quality craftsmanship that sets Blissful Outdoor Solutions apart
         </p>
       </div>
 

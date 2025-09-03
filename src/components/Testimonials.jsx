@@ -7,7 +7,7 @@ const testimonials = [
     name: "Jane M.",
     title: "Homeowner, Nairobi",
     feedback:
-      "Blissful Outdoors completely transformed my backyard. Their attention to detail and professionalism exceeded my expectations.",
+      "Blissful Outdoor Solutions completely transformed my backyard. Their attention to detail and professionalism exceeded my expectations.",
     videoUrl: "",
     description: "Backyard transformation project with detailed landscaping.",
   },

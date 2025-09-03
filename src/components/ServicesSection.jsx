@@ -136,7 +136,7 @@ const ServicesSection = () => {
               <p className="text-gray-700 leading-relaxed">Yes, we offer maintenance and aftercare for many of our services, including landscaping, fencing, and shade structures. Ask our team for details about ongoing support.</p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-blue-500">
-              <h3 className="font-bold text-lg text-green-800 mb-3">What makes Blissful Outdoors different?</h3>
+              <h3 className="font-bold text-lg text-green-800 mb-3">What makes Blissful Outdoor Solutions different?</h3>
               <p className="text-gray-700 leading-relaxed">We combine expert craftsmanship, quality materials, and a passion for outdoor beauty. Our team is dedicated to delivering lasting results and exceptional customer service.</p>
             </div>
           </div>
