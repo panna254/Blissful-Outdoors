@@ -115,10 +115,10 @@ const LandscapingServices = () => {
             {/* Call to Action */}
             <div className="mt-8 text-center">
               <button
-                onClick={handleQuote}
-                className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors mr-4"
+                onClick={() => navigate('/site-survey?service=Landscaping Services')}
+                className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors shadow-lg"
               >
-                Get Quote
+                Book Site Survey
               </button>
               <button
                 onClick={() => navigate("/projects/completed")}

@@ -11,7 +11,8 @@ import About from "./pages/About";
 import Service from "./pages/Service";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
-import Quotation from "./pages/Quotation";
+import QuotationForm from "./components/QuotationForm";
+import SiteSurveyForm from "./components/SiteSurveyForm";
 import Projects from "./pages/Projects";
 import CompletedProjects from "./pages/CompletedProjects";
 import InProgressProjects from "./pages/InProgressProjects";
@@ -44,7 +45,8 @@ function App() {
           <Route path="/services" element={<Service />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/quotation" element={<Quotation />} />
+          <Route path="/quotation" element={<QuotationForm />} />
+          <Route path="/site-survey" element={<SiteSurveyForm />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/completed" element={<CompletedProjects />} />
           <Route path="/projects/in-progress" element={<InProgressProjects />} />
