@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 // Import shared layout components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 // Import pages
 import Home from "./pages/Home";
@@ -70,6 +71,9 @@ function App() {
       </main>
 
       <Footer />
+      
+      {/* Floating WhatsApp Button - Available on all pages */}
+      <WhatsAppButton />
     </div>
   );
 }
