@@ -40,20 +40,16 @@ export default defineConfig({
         },
         // Increase chunk size limits significantly
         chunkSizeWarningLimit: 2000,
-        maxParallelFileOps: 5
+        maxParallelFileOps: 2
       }
     },
     // Optimize assets and build performance
     assetsInlineLimit: 4096,
     sourcemap: false,
-    // Increase memory limits
-    target: 'esnext',
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true
-      }
-    }
+    // Use esbuild for faster builds and better compatibility
+    target: 'es2015',
+    minify: 'esbuild',
+    // Remove problematic terser options
+    chunkSizeWarningLimit: 2000
   }
 })
