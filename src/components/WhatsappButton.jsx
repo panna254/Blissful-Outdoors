@@ -41,7 +41,7 @@ const WhatsAppButton = ({
   return (
     <>
       {/* Floating WhatsApp Button */}
-      <div className="fixed bottom-6 right-6 z-50 group">
+      <div className="fixed bottom-6 right-6 sm:bottom-4 sm:right-4 z-50 group">
         {/* Tooltip */}
         {showTooltipState && (
           <div className="absolute bottom-16 right-0 mb-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 p-3 transform transition-all duration-300 animate-bounce">
@@ -82,15 +82,7 @@ const WhatsAppButton = ({
         <div className="absolute inset-0 rounded-full bg-green-400 opacity-20 animate-ping"></div>
       </div>
 
-      {/* Mobile-specific positioning adjustment */}
-      <style jsx>{`
-        @media (max-width: 640px) {
-          .fixed.bottom-6.right-6 {
-            bottom: 1rem;
-            right: 1rem;
-          }
-        }
-      `}</style>
+      {/* Mobile-specific positioning - handled by Tailwind responsive classes */}
     </>
   );
 };
