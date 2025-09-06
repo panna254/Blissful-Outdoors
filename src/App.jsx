@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 // Import shared layout components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import WhatsAppButton from "./components/WhatsAppButton";
+import WhatsAppButton from "./components/WhatsappButton";
 
 // Import pages
 import Home from "./pages/Home";

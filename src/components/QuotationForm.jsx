@@ -243,7 +243,7 @@ const QuotationForm = () => {
       );
       setShowConfirmation(true);
     } catch (error) {
-      console.error('Error sending email:', error);
+      // console.error('Error sending email:', error); // Removed for production
       alert('There was an error sending your request. Please try again.');
     } finally {
       setIsSubmitting(false);

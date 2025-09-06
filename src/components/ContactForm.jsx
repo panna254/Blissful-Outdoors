@@ -24,7 +24,7 @@ const ContactForm = () => {
           form.current.reset();
         },
         (error) => {
-          console.error("EmailJS error:", error);
+          // console.error("EmailJS error:", error); // Removed for production
           alert("Failed to send message. Please try again.");
         }
       );
