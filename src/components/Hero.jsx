@@ -15,8 +15,8 @@ const Hero = () => {
   const slides = [
     {
       image: landscapingImg,
-      title: "Landscaping & Garden Design",
-      description: "Custom softscapes and layouts that transform outdoor spaces into lush retreats.",
+      title: "Professional Landscaping Services Kenya",
+      description: "Expert landscaping services Kenya with custom garden design that transforms outdoor spaces into beautiful retreats.",
     },
     {
       image: gazeboImg,
@@ -25,8 +25,8 @@ const Hero = () => {
     },
     {
       image: pergolaImg,
-      title: "Pergolas & Outdoor Structures",
-      description: "Elegant pergolas to define spaces and support vines or shade solutions.",
+      title: "Pergola Installation Kenya",
+      description: "Professional pergola installation Kenya with elegant designs to define outdoor spaces and create stunning shade solutions.",
     },
     {
       image: shadesailImg,
@@ -35,13 +35,13 @@ const Hero = () => {
     },
     {
       image: carshadeImg,
-      title: "Car Shades",
-      description: "Protect your vehicles with sleek, weather-resistant car shade solutions.",
+      title: "Car Parking Shades Kenya",
+      description: "Premium car parking shades Kenya - protect your vehicles with durable, weather-resistant shade structures.",
     },
     {
       image: terrazzoImg,
-      title: "Terrazzo Finishes",
-      description: "Durable, elegant terrazzo for pathways, patios, and outdoor accents.",
+      title: "Terrazzo Flooring Kenya",
+      description: "Expert terrazzo flooring Kenya installation - durable, elegant terrazzo for pathways, patios, and outdoor spaces.",
     },
     {
       image: privacyScreensImg,
@@ -100,8 +100,8 @@ const Hero = () => {
                   </span>
                 </h1>
                 <p className="text-lg md:text-xl text-white/90 mb-8">
-                  We Transform and add value to your outdoor living areas. <br /> 
-                  Professional landscaping tailored to your dream.
+                  Leading landscaping services Kenya & outdoor services provider. <br /> 
+                  Professional landscaping, cabro installation & pergola installation tailored to your dream.
                 </p>
                 <button className="px-6 py-3 bg-transparent text-white border border-green-600 rounded-full font-semibold hover:bg-green-600 hover:text-white transition-all duration-200">
                   Explore Services

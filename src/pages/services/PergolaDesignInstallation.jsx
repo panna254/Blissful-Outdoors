@@ -13,9 +13,9 @@ const PergolaDesignInstallation = () => {
   return (
     <>
       <SEOHelmet 
-        title="Pergola Design & Installation Kenya | Custom Outdoor Structures"
-        description="Professional pergola design and installation in Kenya. Custom outdoor structures for shade and style. Expert craftsmanship for residential and commercial properties."
-        keywords="pergola installation Kenya, outdoor structures, custom pergola design, shade structures, garden pergola"
+        title="Pergola Installation Kenya | Professional Pergola Design Nairobi"
+        description="Leading pergola installation Kenya & professional pergola design Nairobi. Custom outdoor structures, shade solutions & expert craftsmanship. Free design quotes!"
+        keywords="pergola installation Kenya, pergola installation Nairobi, pergola design Kenya, pergola design Nairobi, outdoor structures Kenya, shade structures Kenya, custom pergola Kenya, pergola contractors Kenya"
         canonicalUrl="https://blissfuloutdoorsolutions.com/services/pergola-design-installation"
       />
       <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
@@ -23,10 +23,10 @@ const PergolaDesignInstallation = () => {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-green-700 mb-4">
-            Pergola Design & Installation
+            Professional Pergola Installation Kenya
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Custom wood or metal pergolas to transform your patio or garden into an elegant retreat.
+            Leading pergola installation Kenya services - custom wood or metal pergolas to transform your patio or garden into an elegant outdoor retreat with professional design.
           </p>
         </div>
 

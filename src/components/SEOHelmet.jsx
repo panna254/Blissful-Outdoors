@@ -1,9 +1,9 @@
 import React from "react";
 
 const SEOHelmet = ({ 
-  title = "Blissful Outdoor Solutions - Professional Landscaping & Outdoor Services in Kenya",
-  description = "Transform your outdoor spaces with Blissful Outdoor Solutions. Professional landscaping, cabro installation, shade structures, pergolas, and more across Kenya. Get your free quote today!",
-  keywords = "landscaping Kenya, cabro installation, car parking shades, pergola installation, outdoor services Kenya, garden design, shade sails, electric fence, terrazzo flooring",
+  title = "Blissful Outdoor Solutions - Professional Landscaping Services Kenya | Cabro Installation Nairobi",
+  description = "Leading landscaping services Kenya & cabro installation Nairobi. Professional pergola installation, car parking shades, terrazzo flooring & outdoor services across Kenya. Free quotes!",
+  keywords = "landscaping services Kenya, cabro installation Kenya, pergola installation Kenya, car parking shades Kenya, landscaping services Nairobi, cabro installation Nairobi, outdoor services Kenya, garden design Kenya, shade structures Kenya, terrazzo flooring Kenya, professional landscaping company Kenya, landscaping contractors Kenya",
   image = "/assets/hero.jpeg",
   url = "https://blissfuloutdoors.com",
   type = "website"

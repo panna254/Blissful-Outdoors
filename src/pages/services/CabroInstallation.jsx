@@ -13,19 +13,19 @@ const CabroInstallation = () => {
   return (
     <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
       <SEOHelmet 
-        title="Cabro Installation Services - Durable Paving Solutions | Blissful Outdoors"
-        description="Professional cabro installation for driveways, parking areas, and walkways in Kenya. Durable, colorfast blocks with expert installation. Get your free quote today!"
-        keywords="cabro installation Kenya, cabro paving, driveway paving, parking area paving, walkway installation, interlocking blocks Kenya"
+        title="Cabro Installation Kenya | Professional Cabro Paving Contractors Nairobi"
+        description="Leading cabro installation Kenya & cabro paving contractors Nairobi. Expert driveway paving, parking areas & walkways. Durable interlocking blocks. Free quotes!"
+        keywords="cabro installation Kenya, cabro installation Nairobi, cabro paving contractors Nairobi, cabro paving Kenya, driveway paving Kenya, interlocking blocks Kenya, cabro contractors Kenya, professional cabro installation"
         canonicalUrl="https://blissfuloutdoorsolutions.com/services/cabro-installation"
       />
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-green-700 mb-4">
-            Cabro Installation
+            Professional Cabro Installation Kenya
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Professional cabro installations for driveways, parking areas, walkways, and more. Durable, colourfast, and resistant to heavy use.
+            Leading cabro installation Kenya services for driveways, parking areas, walkways, and more. Professional cabro paving contractors with durable, colourfast blocks resistant to heavy use.
           </p>
         </div>
 

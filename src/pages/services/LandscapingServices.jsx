@@ -13,9 +13,9 @@ const LandscapingServices = () => {
   return (
     <>
       <SEOHelmet 
-        title="Professional Landscaping Services Kenya | Garden Design & Transformation"
-        description="Expert landscaping services in Kenya. Garden design, turf laying, flower planting, walkway installation. Transform your outdoor space with professional landscaping."
-        keywords="landscaping Kenya, garden design, turf laying, flower planting, walkway installation, outdoor transformation, lawn installation"
+        title="Landscaping Services Kenya | Professional Landscaping Services Nairobi"
+        description="Leading landscaping services Kenya & professional landscaping services Nairobi. Expert garden design, turf laying, flower planting & outdoor transformation. Free quotes!"
+        keywords="landscaping services Kenya, landscaping services Nairobi, professional landscaping services Kenya, garden design Kenya, landscaping contractors Kenya, outdoor services Kenya, landscaping company Kenya, garden transformation Kenya"
         canonicalUrl="https://blissfuloutdoorsolutions.com/services/landscaping"
       />
       <div className="bg-gray-100 min-h-screen py-16 px-6 md:px-16 mt-20">
@@ -23,10 +23,10 @@ const LandscapingServices = () => {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-green-700 mb-4">
-            Landscaping Services
+            Professional Landscaping Services Kenya
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Transform your outdoor spaces into lush, vibrant sanctuaries with our comprehensive landscaping solutions
+            Leading landscaping services Kenya - transform your outdoor spaces into lush, vibrant sanctuaries with our professional landscaping services and comprehensive garden design solutions
           </p>
         </div>
 
