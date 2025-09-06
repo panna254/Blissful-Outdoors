@@ -54,11 +54,112 @@ Replace `https://blissfuloutdoors.com` with your actual domain.
 
 ## 📊 SEO Performance Monitoring
 
-### 1. Google Search Console Setup
+### 1. Google Search Console Setup & SEO Enhancement Steps
+
+#### A. Initial Setup
 1. Go to [Google Search Console](https://search.google.com/search-console)
-2. Add your website property
-3. Verify ownership via HTML file or DNS
-4. Submit your sitemap: `https://yourdomain.com/sitemap.xml`
+2. Click "Add Property" and select "URL prefix"
+3. Enter your domain: `https://blissfuloutdoorsolutions.com`
+4. Verify ownership using one of these methods:
+   - **HTML file upload** (recommended)
+   - **HTML tag** (add to your index.html head section)
+   - **DNS record** (if you manage DNS)
+
+#### B. Submit Your Sitemap
+1. In GSC, go to "Sitemaps" in left menu
+2. Enter sitemap URL: `sitemap.xml`
+3. Click "Submit"
+4. Monitor indexing status
+
+#### C. SEO Enhancement Actions in Google Search Console
+
+**Week 1-2 After Deployment:**
+1. **Performance Monitoring**
+   - Go to "Performance" tab
+   - Monitor clicks, impressions, CTR, and position
+   - Identify which keywords are bringing traffic
+   - Track rankings for target keywords:
+     - "landscaping services Kenya"
+     - "cabro installation Kenya" 
+     - "pergola installation Kenya"
+
+2. **URL Inspection Tool**
+   - Test individual pages for indexing
+   - Request indexing for new/updated pages
+   - Check mobile usability issues
+   - Verify structured data is working
+
+3. **Coverage Report**
+   - Monitor for crawl errors
+   - Fix any "Error" or "Valid with warnings" issues
+   - Ensure all important pages are indexed
+
+**Month 1-2 Ongoing:**
+4. **Search Analytics Deep Dive**
+   - Identify high-impression, low-click keywords
+   - Optimize meta descriptions for better CTR
+   - Find new keyword opportunities
+   - Track competitor rankings
+
+5. **Core Web Vitals**
+   - Monitor page experience signals
+   - Fix any speed or usability issues
+   - Ensure mobile-first indexing compliance
+
+6. **Enhancement Reports**
+   - Check "Enhancements" section for:
+     - Structured data issues
+     - Mobile usability problems
+     - Page experience metrics
+
+#### D. Advanced SEO Actions
+
+**Keyword Optimization:**
+1. **Query Analysis**
+   - Export search query data
+   - Identify long-tail opportunities
+   - Create content for high-impression, low-ranking queries
+
+2. **Page Performance Review**
+   - Find pages with high impressions but low CTR
+   - Optimize titles and descriptions
+   - Improve content relevance
+
+3. **Internal Linking Optimization**
+   - Use GSC data to identify popular pages
+   - Add internal links from high-traffic pages to service pages
+   - Create topic clusters around main services
+
+**Technical SEO Monitoring:**
+4. **Crawl Budget Optimization**
+   - Monitor crawl stats
+   - Fix crawl errors immediately
+   - Optimize site structure for better crawling
+
+5. **Mobile-First Indexing**
+   - Ensure mobile version has all content
+   - Check mobile usability reports
+   - Fix any mobile-specific issues
+
+6. **Rich Results Monitoring**
+   - Track rich snippet performance
+   - Monitor structured data errors
+   - Optimize for featured snippets
+
+#### E. Monthly SEO Tasks Using GSC
+
+**Every Month:**
+- Export performance data for keyword tracking
+- Review and fix any new coverage issues
+- Monitor Core Web Vitals improvements
+- Check for manual actions or security issues
+- Analyze top-performing content for expansion opportunities
+
+**Quarterly Reviews:**
+- Comprehensive keyword gap analysis
+- Competitor comparison using shared keywords
+- Content strategy updates based on search trends
+- Technical SEO audit using GSC data
 
 ### 2. Google Analytics Setup
 1. Create Google Analytics 4 property
