@@ -58,6 +58,13 @@ const SiteSurveyForm = () => {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      return false;
+    }
+  };
+
   const validateStep = (step) => {
     const newErrors = {};
     
@@ -94,31 +101,35 @@ const SiteSurveyForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    // Only allow submission on step 3
+    if (currentStep !== 3) {
+      return false;
+    }
+    
     if (!validateStep(3)) return;
 
     setIsSubmitting(true);
 
     const templateParams = {
-      form_type: 'Site Survey Booking',
-      user_name: formData.fullName,
-      user_email: formData.email,
-      user_phone: formData.phone,
-      user_location: formData.location,
-      user_address: formData.address,
-      property_type: formData.propertyType,
-      project_area: formData.projectArea,
-      budget_range: formData.budget,
+      fullName: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      location: formData.location,
+      budget: formData.budget,
+      address: formData.address,
+      propertyType: formData.propertyType,
+      projectArea: formData.projectArea,
       timeline: formData.timeline,
-      project_description: formData.projectDescription,
-      existing_landscape: formData.hasExistingLandscape,
-      soil_type: formData.soilType,
-      drainage_issues: formData.drainageIssues,
-      sunlight_exposure: formData.sunlightExposure,
-      accessibility_notes: formData.accessibilityNotes,
-      special_requests: formData.specialRequests,
-      preferred_date: formData.preferredDate,
-      preferred_time: formData.preferredTime,
-      survey_cost: formData.location ? `KES ${surveyCosts[formData.location]?.toLocaleString() || 'N/A'}` : 'N/A',
+      surveyCost: formData.location ? `KES ${surveyCosts[formData.location]?.toLocaleString() || 'N/A'}` : 'N/A',
+      soilType: formData.soilType || 'Not specified',
+      drainageIssues: formData.drainageIssues || 'Not specified',
+      sunlightExposure: formData.sunlightExposure || 'Not specified',
+      preferredDate: formData.preferredDate,
+      preferredTime: formData.preferredTime,
+      hasExistingLandscape: formData.hasExistingLandscape || 'Not specified',
+      accessibilityNotes: formData.accessibilityNotes || 'None',
+      specialRequests: formData.specialRequests || 'None',
+      projectDescription: formData.projectDescription
     };
 
     try {
@@ -213,7 +224,7 @@ const SiteSurveyForm = () => {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="p-8">
+          <form onSubmit={handleSubmit} className="p-8" onKeyDown={handleKeyDown}>
             {/* Step 1: Personal Information */}
             {currentStep === 1 && (
               <div className="space-y-6">

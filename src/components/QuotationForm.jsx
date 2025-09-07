@@ -184,16 +184,14 @@ const QuotationForm = () => {
     const newErrors = {};
     
     if (step === 1) {
-      if (!formData.fullName.trim()) newErrors.fullName = 'Full name is required';
-      if (!formData.email.trim()) newErrors.email = 'Email is required';
-      if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
+      if (!formData.fullName || !formData.fullName.trim()) newErrors.fullName = 'Full name is required';
+      if (!formData.email || !formData.email.trim()) newErrors.email = 'Email is required';
+      if (!formData.phone || !formData.phone.trim()) newErrors.phone = 'Phone number is required';
       if (!formData.location) newErrors.location = 'Location is required';
     }
     
     if (step === 2) {
       if (!formData.selectedService) newErrors.selectedService = 'Please select a service';
-      if (!formData.propertyType) newErrors.propertyType = 'Property type is required';
-      if (!formData.projectArea.trim()) newErrors.projectArea = 'Project area is required';
     }
     
     setErrors(newErrors);
@@ -218,33 +216,40 @@ const QuotationForm = () => {
     setIsSubmitting(true);
 
     const templateParams = {
-      form_type: 'Quotation Request',
-      user_name: formData.fullName,
-      user_email: formData.email,
-      user_phone: formData.phone,
-      user_location: formData.location,
-      selected_service: formData.selectedService,
-      number_of_cars: formData.numberOfCars,
-      square_meters: formData.squareMeters,
-      material_type: formData.materialType,
-      fence_length: formData.fenceLength,
-      flooring_area: formData.flooringArea,
-      timeline: formData.timeline,
-      special_requirements: formData.specialRequirements,
-      estimated_cost: `KES ${estimatedCost.toLocaleString()}`
+      fullName: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      location: formData.location,
+      budget: `KES ${estimatedCost.toLocaleString()}`,
+      address: formData.address || 'Not provided',
+      message: `Quotation Request Details:
+
+Service: ${formData.selectedService}
+Timeline: ${formData.timeline || 'Not specified'}
+
+Service Specifications:
+- Number of Cars: ${formData.numberOfCars || 'N/A'}
+- Square Meters: ${formData.squareMeters || 'N/A'}
+- Material Type: ${formData.materialType || 'N/A'}
+- Fence Length: ${formData.fenceLength || 'N/A'}
+- Flooring Area: ${formData.flooringArea || 'N/A'}
+
+Special Requirements: ${formData.specialRequirements || 'None'}
+
+Estimated Cost: KES ${estimatedCost.toLocaleString()}`
     };
 
     try {
       await emailjs.send(
-        'service_blissful',
-        'template_quotation',
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_blissful',
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_quotation',
         templateParams,
-        'your_public_key'
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'your_public_key'
       );
       setShowConfirmation(true);
     } catch (error) {
-      // console.error('Error sending email:', error); // Removed for production
-      alert('There was an error sending your request. Please try again.');
+      console.error('EmailJS Error:', error);
+      alert('There was an error sending your request. Please try again or contact us via WhatsApp.');
     } finally {
       setIsSubmitting(false);
     }
