@@ -63,7 +63,7 @@ const Testimonials = () => {
         viewport={{ once: true }}
         className="text-3xl md:text-4xl font-bold text-center text-green-700 mb-12"
       >
-        What Our Clients Say
+        Testimonials
       </motion.h2>
 
       <div className="overflow-x-auto overflow-y-hidden scroll-smooth snap-x snap-mandatory">

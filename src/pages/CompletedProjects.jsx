@@ -5,8 +5,8 @@ import cabroImg from "../assets/cabro.jpeg";
 import gazeboImg from "../assets/gazebo.jpeg";
 
 const completedProjects = [
-  { title: "Luxury Garden Landscaping", image: landscapingImg, location: "Ruiru, Kiambu" },
-  { title: "Cabro Installation", image: cabroImg, location: "Karen, Nairobi" },
+  { title: "Luxury Garden Landscaping", image: landscapingImg, location: "Malindi, Msabaha, Gede Location" },
+  { title: "Cabro Installation", image: cabroImg, location: "Ruiru Imani Court" },
   { title: "Custom Gazebo Installation", image: gazeboImg, location: "Naivasha, Nakuru" },
 ];
 
