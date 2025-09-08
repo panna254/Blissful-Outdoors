@@ -53,44 +53,107 @@ const ContactForm = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl grid md:grid-cols-2 gap-10 p-10 max-w-5xl mx-auto"
+        className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl grid lg:grid-cols-2 gap-8 p-6 md:p-8 lg:p-10 max-w-6xl mx-auto"
       >
         {/* FORM */}
-        <div>
+        <div className="min-h-0 overflow-hidden">
           <h2 className="text-4xl font-bold text-green-700 mb-4">Contact Us</h2>
           <p className="text-gray-700 mb-8">
             Fill out the form and we’ll get back to you as soon as possible.
           </p>
 
-          <form ref={form} onSubmit={sendEmail} className="space-y-6">
-            <input
-              type="text"
-              name="user_name"
-              placeholder="Full Name"
-              required
-              className="w-full p-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
-            />
-            <input
-              type="email"
-              name="user_email"
-              placeholder="Email Address"
-              required
-              className="w-full p-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
-            />
-            <input
-              type="text"
-              name="subject"
-              placeholder="Subject"
-              required
-              className="w-full p-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
-            />
-            <textarea
-              name="message"
-              rows="5"
-              placeholder="Your Message"
-              required
-              className="w-full p-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
-            ></textarea>
+          <form ref={form} onSubmit={sendEmail} className="space-y-5">
+            {/* Personal Information Section */}
+            <div className="space-y-3">
+              <h4 className="text-base font-semibold text-gray-800 border-b border-gray-200 pb-1 mb-3">
+                Personal Information
+              </h4>
+              <div className="space-y-3">
+                <div className="relative">
+                  <label htmlFor="user_name" className="block text-sm font-medium text-gray-700 mb-1">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="user_name"
+                    name="user_name"
+                    placeholder="Enter your full name"
+                    required
+                    className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 text-sm"
+                  />
+                </div>
+                <div className="relative">
+                  <label htmlFor="user_email" className="block text-sm font-medium text-gray-700 mb-1">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="user_email"
+                    name="user_email"
+                    placeholder="your.email@example.com"
+                    required
+                    className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 text-sm"
+                  />
+                </div>
+                <div className="relative">
+                  <label htmlFor="user_phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    Phone Number (Optional)
+                  </label>
+                  <input
+                    type="tel"
+                    id="user_phone"
+                    name="user_phone"
+                    placeholder="+254 700 000 000"
+                    className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 text-sm"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Message Details Section */}
+            <div className="space-y-3">
+              <h4 className="text-base font-semibold text-gray-800 border-b border-gray-200 pb-1 mb-3">
+                Message Details
+              </h4>
+              <div className="relative">
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                  Subject *
+                </label>
+                <select
+                  id="subject"
+                  name="subject"
+                  required
+                  className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 bg-white text-sm"
+                >
+                  <option value="">Select a service or inquiry type</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                  <option value="Landscaping Services">Landscaping Services</option>
+                  <option value="Pergola Installation">Pergola Installation</option>
+                  <option value="Car Parking Shades">Car Parking Shades</option>
+                  <option value="Swimming Pool Construction">Swimming Pool Construction</option>
+                  <option value="Cabro Paving">Cabro Paving</option>
+                  <option value="Quotation Request">Quotation Request</option>
+                  <option value="Site Survey">Site Survey Request</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div className="relative">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  Your Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Please provide details about your project, timeline, budget range, or any specific requirements..."
+                  required
+                  className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 resize-vertical text-sm"
+                ></textarea>
+                <div className="text-xs text-gray-500 mt-1">
+                  Tip: Include project location, preferred timeline, and budget range for faster response
+                </div>
+              </div>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <button
