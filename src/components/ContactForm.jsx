@@ -53,7 +53,7 @@ const ContactForm = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl grid lg:grid-cols-2 gap-8 p-6 md:p-8 lg:p-10 max-w-6xl mx-auto"
+        className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl grid lg:grid-cols-2 gap-6 lg:gap-8 p-4 md:p-6 lg:p-8 max-w-6xl mx-auto"
       >
         {/* FORM */}
         <div className="min-h-0 overflow-hidden">
@@ -62,13 +62,13 @@ const ContactForm = () => {
             Fill out the form and we’ll get back to you as soon as possible.
           </p>
 
-          <form ref={form} onSubmit={sendEmail} className="space-y-5">
+          <form ref={form} onSubmit={sendEmail} className="space-y-4">
             {/* Personal Information Section */}
-            <div className="space-y-3">
+            <div className="space-y-2">
               <h4 className="text-base font-semibold text-gray-800 border-b border-gray-200 pb-1 mb-3">
                 Personal Information
               </h4>
-              <div className="space-y-3">
+              <div className="space-y-2">
                 <div className="relative">
                   <label htmlFor="user_name" className="block text-sm font-medium text-gray-700 mb-1">
                     Full Name *
@@ -79,7 +79,7 @@ const ContactForm = () => {
                     name="user_name"
                     placeholder="Enter your full name"
                     required
-                    className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 text-sm"
+                    className="w-full p-2 sm:p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 text-sm"
                   />
                 </div>
                 <div className="relative">
@@ -92,7 +92,7 @@ const ContactForm = () => {
                     name="user_email"
                     placeholder="your.email@example.com"
                     required
-                    className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 text-sm"
+                    className="w-full p-2 sm:p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 text-sm"
                   />
                 </div>
                 <div className="relative">
@@ -104,14 +104,14 @@ const ContactForm = () => {
                     id="user_phone"
                     name="user_phone"
                     placeholder="+254 700 000 000"
-                    className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 text-sm"
+                    className="w-full p-2 sm:p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 text-sm"
                   />
                 </div>
               </div>
             </div>
 
             {/* Message Details Section */}
-            <div className="space-y-3">
+            <div className="space-y-2">
               <h4 className="text-base font-semibold text-gray-800 border-b border-gray-200 pb-1 mb-3">
                 Message Details
               </h4>
@@ -123,7 +123,7 @@ const ContactForm = () => {
                   id="subject"
                   name="subject"
                   required
-                  className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 bg-white text-sm"
+                  className="w-full p-2 sm:p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 bg-white text-sm"
                 >
                   <option value="">Select a service or inquiry type</option>
                   <option value="General Inquiry">General Inquiry</option>
@@ -144,10 +144,10 @@ const ContactForm = () => {
                 <textarea
                   id="message"
                   name="message"
-                  rows="4"
+                  rows="3"
                   placeholder="Please provide details about your project, timeline, budget range, or any specific requirements..."
                   required
-                  className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 resize-vertical text-sm"
+                  className="w-full p-2 sm:p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 resize-vertical text-sm"
                 ></textarea>
                 <div className="text-xs text-gray-500 mt-1">
                   Tip: Include project location, preferred timeline, and budget range for faster response
