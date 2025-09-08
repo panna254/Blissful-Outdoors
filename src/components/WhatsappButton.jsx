@@ -34,6 +34,9 @@ const WhatsAppButton = ({
         event_label: 'floating_button'
       });
     }
+    
+    // Open WhatsApp in new window/tab
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
   };
 
   if (!isVisible) return null;
