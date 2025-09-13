@@ -138,8 +138,8 @@ const Navbar = () => {
                     {services.slice(0, 7).map((service) => (
                       <Link
                         key={service.title}
-                        to={`/services#${service.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`}
-                        className="block px-4 py-2 text-sm hover:bg-gray-50"
+                        to={service.route}
+                        className="block px-4 py-2 text-sm hover:bg-gray-50 transition-colors duration-200"
                       >
                         {service.title}
                       </Link>
@@ -279,9 +279,9 @@ const Navbar = () => {
                       {services.slice(0, 7).map((service) => (
                         <Link
                           key={service.title}
-                          to={`/services#${service.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`}
+                          to={service.route}
                           onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); }}
-                          className="hover:underline underline-offset-4 decoration-green-400"
+                          className="hover:underline underline-offset-4 decoration-green-400 transition-colors duration-200"
                         >
                           {service.title}
                         </Link>
