@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaWhatsapp, FaTimes } from "react-icons/fa";
 
 const WhatsAppButton = ({ 
-  message = "Hi! I'm interested in your landscaping services. Can you help me with a quote?",
+  message = "Need help with any outdoor work",
   showTooltip = true 
 }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,10 +51,10 @@ const WhatsAppButton = ({
             <div className="flex justify-between items-start">
               <div>
                 <p className="text-sm font-semibold text-gray-800 mb-1">
-                  Need help with landscaping?
+                  Need help with any outdoor work?
                 </p>
                 <p className="text-xs text-gray-600">
-                  Chat with us on WhatsApp for instant quotes!
+                  Chat with us on WhatsApp for instant assistance!
                 </p>
               </div>
               <button
