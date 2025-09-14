@@ -16,19 +16,8 @@ const SiteSurveyForm = () => {
     phone: '',
     location: '',
     address: '',
-    propertyType: '',
-    projectArea: '',
-    budget: '',
-    timeline: '',
     projectDescription: '',
-    hasExistingLandscape: '',
-    soilType: '',
-    drainageIssues: '',
-    sunlightExposure: '',
-    accessibilityNotes: '',
-    specialRequests: '',
-    preferredDate: '',
-    preferredTime: ''
+    preferredDate: ''
   });
 
   const surveyCosts = {
@@ -98,14 +87,8 @@ const SiteSurveyForm = () => {
       if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
       if (!formData.location) newErrors.location = 'Location is required';
     } else if (step === 2) {
-      if (!formData.propertyType) newErrors.propertyType = 'Property type is required';
-      if (!formData.projectArea.trim()) newErrors.projectArea = 'Project area is required';
-      if (!formData.budget) newErrors.budget = 'Budget range is required';
-      if (!formData.timeline) newErrors.timeline = 'Timeline is required';
-    } else if (step === 3) {
       if (!formData.projectDescription.trim()) newErrors.projectDescription = 'Project description is required';
       if (!formData.preferredDate) newErrors.preferredDate = 'Preferred survey date is required';
-      if (!formData.preferredTime) newErrors.preferredTime = 'Preferred time is required';
     }
 
     setErrors(newErrors);
@@ -114,7 +97,7 @@ const SiteSurveyForm = () => {
 
   const nextStep = () => {
     if (validateStep(currentStep)) {
-      setCurrentStep(prev => Math.min(prev + 1, 3));
+      setCurrentStep(prev => Math.min(prev + 1, 2));
     }
   };
 
@@ -125,12 +108,12 @@ const SiteSurveyForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Only allow submission on step 3
-    if (currentStep !== 3) {
+    // Only allow submission on step 2
+    if (currentStep !== 2) {
       return false;
     }
     
-    if (!validateStep(3)) return;
+    if (!validateStep(2)) return;
 
     setIsSubmitting(true);
 
@@ -139,21 +122,10 @@ const SiteSurveyForm = () => {
       email: formData.email,
       phone: formData.phone,
       location: formData.location,
-      budget: formData.budget,
-      address: formData.address,
-      propertyType: formData.propertyType,
-      projectArea: formData.projectArea,
-      timeline: formData.timeline,
-      surveyCost: formData.location ? `KES ${surveyCosts[formData.location]?.toLocaleString() || 'N/A'}` : 'N/A',
-      soilType: formData.soilType || 'Not specified',
-      drainageIssues: formData.drainageIssues || 'Not specified',
-      sunlightExposure: formData.sunlightExposure || 'Not specified',
+      address: formData.address || 'Not provided',
       preferredDate: formData.preferredDate,
-      preferredTime: formData.preferredTime,
-      hasExistingLandscape: formData.hasExistingLandscape || 'Not specified',
-      accessibilityNotes: formData.accessibilityNotes || 'None',
-      specialRequests: formData.specialRequests || 'None',
-      projectDescription: formData.projectDescription
+      surveyCost: formData.location ? `KES ${surveyCosts[formData.location]?.toLocaleString() || 'N/A'}` : 'N/A',
+      message: formData.projectDescription
     };
 
     try {
@@ -161,7 +133,7 @@ const SiteSurveyForm = () => {
         'service_blissful',
         'template_survey',
         templateParams,
-        'your_public_key'
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
       setShowConfirmation(true);
     } catch (error) {
@@ -237,7 +209,7 @@ const SiteSurveyForm = () => {
           {/* Progress Bar */}
           <div className="px-8 py-4 bg-gray-50">
             <div className="flex items-center justify-between mb-2">
-              {[1, 2, 3].map((step) => (
+              {[1, 2].map((step) => (
                 <div
                   key={step}
                   className={`flex items-center justify-center w-8 h-8 rounded-full text-sm font-medium ${
@@ -253,7 +225,7 @@ const SiteSurveyForm = () => {
             <div className="w-full bg-gray-300 rounded-full h-2">
               <div
                 className="bg-green-600 h-2 rounded-full transition-all duration-300"
-                style={{ width: `${(currentStep / 3) * 100}%` }}
+                style={{ width: `${(currentStep / 2) * 100}%` }}
               ></div>
             </div>
           </div>
@@ -336,9 +308,16 @@ const SiteSurveyForm = () => {
                   </select>
                   {errors.location && <p className="text-red-500 text-sm mt-1">{errors.location}</p>}
                   {formData.location && (
-                    <p className="text-green-600 text-sm mt-1">
-                      Survey Cost: KES {surveyCosts[formData.location]?.toLocaleString() || 'Contact us for pricing'}
-                    </p>
+                    <div className="mt-2 p-3 bg-green-50 border border-green-200 rounded-lg">
+                      <p className="text-green-700 font-medium text-sm mb-1">
+                        Survey Cost: KES {surveyCosts[formData.location]?.toLocaleString() || 'Contact us for pricing'}
+                      </p>
+                      <div className="text-green-600 text-xs space-y-1">
+                        <p>• Payment made <strong>only after</strong> survey completion</p>
+                        <p>• Fee is <strong>fully deductible</strong> from final project cost if you proceed with us</p>
+                        <p>• This is a facilitation fee to cover travel to your location</p>
+                      </div>
+                    </div>
                   )}
                 </div>
 
@@ -358,120 +337,8 @@ const SiteSurveyForm = () => {
               </div>
             )}
 
-            {/* Step 2: Project Details */}
+            {/* Step 2: Survey Scheduling & Details */}
             {currentStep === 2 && (
-              <div className="space-y-6">
-                <h2 className="text-xl font-semibold text-gray-800 mb-4">Project Details</h2>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Property Type *
-                  </label>
-                  <select
-                    name="propertyType"
-                    value={formData.propertyType}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent ${
-                      errors.propertyType ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                  >
-                    <option value="">Select property type</option>
-                    <option value="Residential Home">Residential Home</option>
-                    <option value="Apartment/Condo">Apartment/Condo</option>
-                    <option value="Commercial Property">Commercial Property</option>
-                    <option value="Office Building">Office Building</option>
-                    <option value="Hotel/Resort">Hotel/Resort</option>
-                    <option value="School/Institution">School/Institution</option>
-                    <option value="Other">Other</option>
-                  </select>
-                  {errors.propertyType && <p className="text-red-500 text-sm mt-1">{errors.propertyType}</p>}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Project Area *
-                  </label>
-                  <input
-                    type="text"
-                    name="projectArea"
-                    value={formData.projectArea}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent ${
-                      errors.projectArea ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                    placeholder="e.g., 500 sqm, Front yard, Backyard, etc."
-                  />
-                  {errors.projectArea && <p className="text-red-500 text-sm mt-1">{errors.projectArea}</p>}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Budget Range *
-                  </label>
-                  <select
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent ${
-                      errors.budget ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                  >
-                    <option value="">Select budget range</option>
-                    <option value="Under KES 100,000">Under KES 100,000</option>
-                    <option value="KES 100,000 - 300,000">KES 100,000 - 300,000</option>
-                    <option value="KES 300,000 - 500,000">KES 300,000 - 500,000</option>
-                    <option value="KES 500,000 - 1,000,000">KES 500,000 - 1,000,000</option>
-                    <option value="Over KES 1,000,000">Over KES 1,000,000</option>
-                    <option value="Need consultation">Need consultation</option>
-                  </select>
-                  {errors.budget && <p className="text-red-500 text-sm mt-1">{errors.budget}</p>}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Project Timeline *
-                  </label>
-                  <select
-                    name="timeline"
-                    value={formData.timeline}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent ${
-                      errors.timeline ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                  >
-                    <option value="">Select timeline</option>
-                    <option value="ASAP">ASAP</option>
-                    <option value="Within 1 month">Within 1 month</option>
-                    <option value="1-3 months">1-3 months</option>
-                    <option value="3-6 months">3-6 months</option>
-                    <option value="6+ months">6+ months</option>
-                    <option value="Just planning">Just planning</option>
-                  </select>
-                  {errors.timeline && <p className="text-red-500 text-sm mt-1">{errors.timeline}</p>}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Existing Landscape
-                  </label>
-                  <select
-                    name="hasExistingLandscape"
-                    value={formData.hasExistingLandscape}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                  >
-                    <option value="">Select option</option>
-                    <option value="Yes - needs renovation">Yes - needs renovation</option>
-                    <option value="Yes - partial renovation">Yes - partial renovation</option>
-                    <option value="No - starting fresh">No - starting fresh</option>
-                    <option value="Minimal landscaping">Minimal landscaping</option>
-                  </select>
-                </div>
-              </div>
-            )}
-
-            {/* Step 3: Survey Scheduling & Additional Info */}
-            {currentStep === 3 && (
               <div className="space-y-6">
                 <h2 className="text-xl font-semibold text-gray-800 mb-4">Survey Scheduling & Details</h2>
                 
@@ -492,126 +359,21 @@ const SiteSurveyForm = () => {
                   {errors.projectDescription && <p className="text-red-500 text-sm mt-1">{errors.projectDescription}</p>}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Preferred Survey Date *
-                    </label>
-                    <input
-                      type="date"
-                      name="preferredDate"
-                      value={formData.preferredDate}
-                      onChange={handleInputChange}
-                      min={new Date().toISOString().split('T')[0]}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent ${
-                        errors.preferredDate ? 'border-red-500' : 'border-gray-300'
-                      }`}
-                    />
-                    {errors.preferredDate && <p className="text-red-500 text-sm mt-1">{errors.preferredDate}</p>}
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Preferred Time *
-                    </label>
-                    <select
-                      name="preferredTime"
-                      value={formData.preferredTime}
-                      onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent ${
-                        errors.preferredTime ? 'border-red-500' : 'border-gray-300'
-                      }`}
-                    >
-                      <option value="">Select time</option>
-                      <option value="Morning (8AM - 12PM)">Morning (8AM - 12PM)</option>
-                      <option value="Afternoon (12PM - 4PM)">Afternoon (12PM - 4PM)</option>
-                      <option value="Evening (4PM - 6PM)">Evening (4PM - 6PM)</option>
-                    </select>
-                    {errors.preferredTime && <p className="text-red-500 text-sm mt-1">{errors.preferredTime}</p>}
-                  </div>
-                </div>
-
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Soil Type (if known)
+                    Preferred Survey Date *
                   </label>
-                  <select
-                    name="soilType"
-                    value={formData.soilType}
+                  <input
+                    type="date"
+                    name="preferredDate"
+                    value={formData.preferredDate}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                  >
-                    <option value="">Select soil type</option>
-                    <option value="Clay">Clay</option>
-                    <option value="Sandy">Sandy</option>
-                    <option value="Loamy">Loamy</option>
-                    <option value="Rocky">Rocky</option>
-                    <option value="Unknown">Unknown</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Drainage Issues
-                  </label>
-                  <select
-                    name="drainageIssues"
-                    value={formData.drainageIssues}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                  >
-                    <option value="">Select option</option>
-                    <option value="No issues">No issues</option>
-                    <option value="Poor drainage">Poor drainage</option>
-                    <option value="Water logging">Water logging</option>
-                    <option value="Unknown">Unknown</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Sunlight Exposure
-                  </label>
-                  <select
-                    name="sunlightExposure"
-                    value={formData.sunlightExposure}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                  >
-                    <option value="">Select exposure</option>
-                    <option value="Full sun (6+ hours)">Full sun (6+ hours)</option>
-                    <option value="Partial sun (3-6 hours)">Partial sun (3-6 hours)</option>
-                    <option value="Partial shade (2-4 hours)">Partial shade (2-4 hours)</option>
-                    <option value="Full shade (<2 hours)">Full shade (&lt;2 hours)</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Accessibility Notes
-                  </label>
-                  <textarea
-                    name="accessibilityNotes"
-                    value={formData.accessibilityNotes}
-                    onChange={handleInputChange}
-                    rows="2"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                    placeholder="Any access restrictions, narrow gates, stairs, etc."
+                    min={new Date().toISOString().split('T')[0]}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent ${
+                      errors.preferredDate ? 'border-red-500' : 'border-gray-300'
+                    }`}
                   />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Special Requests
-                  </label>
-                  <textarea
-                    name="specialRequests"
-                    value={formData.specialRequests}
-                    onChange={handleInputChange}
-                    rows="2"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                    placeholder="Any specific requirements or questions for our surveyor"
-                  />
+                  {errors.preferredDate && <p className="text-red-500 text-sm mt-1">{errors.preferredDate}</p>}
                 </div>
               </div>
             )}
@@ -649,7 +411,7 @@ const SiteSurveyForm = () => {
                   </span>
                 </button>
                 
-                {currentStep < 3 ? (
+                {currentStep < 2 ? (
                   <button
                     type="button"
                     onClick={nextStep}
