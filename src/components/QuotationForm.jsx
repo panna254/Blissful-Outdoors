@@ -553,42 +553,55 @@ const QuotationForm = () => {
   }
 
   return (
-    <div className="bg-white py-12 px-6 md:px-20">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-green-700 mb-4">
-          Request Your Professional Quotation
-        </h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Complete our comprehensive form to receive an accurate, detailed quotation for your outdoor project
-        </p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 pt-24 pb-12 px-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-green-700 mb-4">
+            Request Your Professional Quotation
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Complete our comprehensive form to receive an accurate, detailed quotation for your outdoor project
+          </p>
+        </div>
 
-      {!submitted ? (
-        <div className="max-w-4xl mx-auto">
-          <div className="flex justify-center mb-8">
-            <div className="flex items-center space-x-4">
-              {[1, 2, 3].map((step) => (
-                <div key={step} className="flex items-center">
-                  <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                      currentStep >= step
-                        ? 'bg-green-600 text-white'
-                        : 'bg-gray-300 text-gray-600'
-                    }`}
-                  >
-                    {step}
-                  </div>
-                  {step < 3 && (
-                    <div className={`w-16 h-1 ${currentStep > step ? 'bg-green-600' : 'bg-gray-300'}`} />
-                  )}
+        {!submitted ? (
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            {/* Progress Bar */}
+            <div className="px-8 py-6 bg-gray-50 border-b">
+              <div className="flex justify-center mb-4">
+                <div className="flex items-center space-x-4">
+                  {[1, 2, 3].map((step) => (
+                    <div key={step} className="flex items-center">
+                      <div
+                        className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${
+                          currentStep >= step
+                            ? 'bg-green-600 text-white'
+                            : 'bg-gray-300 text-gray-600'
+                        }`}
+                      >
+                        {step}
+                      </div>
+                      {step < 3 && (
+                        <div className={`w-16 h-1 ${currentStep > step ? 'bg-green-600' : 'bg-gray-300'}`} />
+                      )}
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <div className="text-center">
+                <p className="text-sm text-gray-600">
+                  Step {currentStep} of 3: {
+                    currentStep === 1 ? 'Personal Information' :
+                    currentStep === 2 ? 'Service & Pricing Details' :
+                    'Project Requirements'
+                  }
+                </p>
+              </div>
             </div>
-          </div>
-          
-          <form onSubmit={handleSubmit} className="bg-gray-50 shadow-lg p-8 rounded-xl" name="quotation-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="quotation-request" />
-            <input type="hidden" name="bot-field" style={{display: 'none'}} />
+            
+            <form onSubmit={handleSubmit} className="p-8" name="quotation-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="quotation-request" />
+              <input type="hidden" name="bot-field" style={{display: 'none'}} />
             {/* Step 1: Personal Information */}
             {currentStep === 1 && (
               <div className="space-y-6">
@@ -851,6 +864,7 @@ const QuotationForm = () => {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 };
