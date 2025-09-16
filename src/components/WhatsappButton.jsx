@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaWhatsapp, FaTimes } from "react-icons/fa";
 
 const WhatsAppButton = ({ 
-  message = "Need help with any outdoor work",
+  message = "Hello! I'm interested in your outdoor services. Can you help me?",
   showTooltip = true 
 }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,36 +10,84 @@ const WhatsAppButton = ({
   
   const phoneNumber = "254715812430";
   const encodedMessage = encodeURIComponent(message);
+  
+  console.log('WhatsApp Button Component Loaded');
+  console.log('Phone Number:', phoneNumber);
+  console.log('Encoded Message:', encodedMessage);
 
   useEffect(() => {
-    // Show button after 2 seconds for better UX
+    console.log('WhatsApp Button useEffect triggered');
+    // Show button immediately for testing
     const timer = setTimeout(() => {
+      console.log('Setting button visible');
       setIsVisible(true);
       // Show tooltip after button appears
       if (showTooltip) {
-        setTimeout(() => setShowTooltipState(true), 1000);
+        setTimeout(() => {
+          console.log('Showing tooltip');
+          setShowTooltipState(true);
+        }, 1000);
         // Hide tooltip after 5 seconds
-        setTimeout(() => setShowTooltipState(false), 6000);
+        setTimeout(() => {
+          console.log('Hiding tooltip');
+          setShowTooltipState(false);
+        }, 6000);
       }
-    }, 2000);
+    }, 500); // Reduced delay for testing
 
     return () => clearTimeout(timer);
   }, [showTooltip]);
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    console.log('WhatsApp button clicked!');
+    e.preventDefault();
+    e.stopPropagation();
+    
     // Track WhatsApp click for analytics
-    if (window.gtag) {
-      window.gtag('event', 'whatsapp_click', {
-        event_category: 'engagement',
-        event_label: 'floating_button'
-      });
+    try {
+      if (window.gtag) {
+        window.gtag('event', 'whatsapp_click', {
+          event_category: 'engagement',
+          event_label: 'floating_button'
+        });
+      }
+    } catch (error) {
+      console.log('Analytics tracking failed:', error);
     }
     
-    // Open WhatsApp in new window/tab
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    // Construct WhatsApp URL
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    console.log('Opening WhatsApp URL:', whatsappUrl);
+    
+    // Try multiple methods to open WhatsApp
+    try {
+      // Method 1: window.open
+      const newWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      if (!newWindow) {
+        console.log('Popup blocked, trying alternative method');
+        // Method 2: Direct location change
+        window.location.href = whatsappUrl;
+      }
+    } catch (error) {
+      console.error('Error opening WhatsApp:', error);
+      // Method 3: Fallback
+      try {
+        window.location.href = whatsappUrl;
+      } catch (fallbackError) {
+        console.error('Fallback method also failed:', fallbackError);
+        alert('Unable to open WhatsApp. Please call +254715812430 directly.');
+      }
+    }
   };
 
-  if (!isVisible) return null;
+  console.log('Button visibility state:', isVisible);
+  
+  if (!isVisible) {
+    console.log('Button not visible, returning null');
+    return null;
+  }
+  
+  console.log('Rendering WhatsApp button');
 
   return (
     <>
@@ -70,16 +118,14 @@ const WhatsAppButton = ({
         )}
 
         {/* Main WhatsApp Button */}
-        <a
-          href={`https://wa.me/${phoneNumber}?text=${encodedMessage}`}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
           onClick={handleClick}
-          className="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-110 group-hover:animate-pulse"
+          className="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-110 group-hover:animate-pulse cursor-pointer"
           aria-label="Chat on WhatsApp"
+          type="button"
         >
           <FaWhatsapp className="text-2xl" />
-        </a>
+        </button>
 
         {/* Ripple Effect */}
         <div className="absolute inset-0 rounded-full bg-green-400 opacity-20 animate-ping"></div>
