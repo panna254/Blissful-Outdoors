@@ -8,8 +8,9 @@ const WhatsAppButton = ({
   const [isVisible, setIsVisible] = useState(false);
   const [showTooltipState, setShowTooltipState] = useState(false);
   
-  const phoneNumber = "254715812430";
+  const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER || "254741612080";
   const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   
   console.log('WhatsApp Button Component Loaded');
   console.log('Phone Number:', phoneNumber);
@@ -17,31 +18,35 @@ const WhatsAppButton = ({
 
   useEffect(() => {
     console.log('WhatsApp Button useEffect triggered');
-    // Show button immediately for testing
-    const timer = setTimeout(() => {
+    // Button visibility timer
+    const visibilityTimer = setTimeout(() => {
       console.log('Setting button visible');
       setIsVisible(true);
-      // Show tooltip after button appears
-      if (showTooltip) {
-        setTimeout(() => {
-          console.log('Showing tooltip');
-          setShowTooltipState(true);
-        }, 1000);
-        // Hide tooltip after 5 seconds
-        setTimeout(() => {
-          console.log('Hiding tooltip');
-          setShowTooltipState(false);
-        }, 6000);
-      }
-    }, 500); // Reduced delay for testing
+    }, 500);
 
-    return () => clearTimeout(timer);
+    // Tooltip timers
+    let tooltipShowTimer;
+    let tooltipHideTimer;
+    if (showTooltip) {
+      tooltipShowTimer = setTimeout(() => {
+        console.log('Showing tooltip');
+        setShowTooltipState(true);
+      }, 1000);
+      tooltipHideTimer = setTimeout(() => {
+        console.log('Hiding tooltip');
+        setShowTooltipState(false);
+      }, 6000);
+    }
+
+    return () => {
+      clearTimeout(visibilityTimer);
+      if (tooltipShowTimer) clearTimeout(tooltipShowTimer);
+      if (tooltipHideTimer) clearTimeout(tooltipHideTimer);
+    };
   }, [showTooltip]);
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     console.log('WhatsApp button clicked!');
-    e.preventDefault();
-    e.stopPropagation();
     
     // Track WhatsApp click for analytics
     try {
@@ -53,30 +58,6 @@ const WhatsAppButton = ({
       }
     } catch (error) {
       console.log('Analytics tracking failed:', error);
-    }
-    
-    // Construct WhatsApp URL
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    console.log('Opening WhatsApp URL:', whatsappUrl);
-    
-    // Try multiple methods to open WhatsApp
-    try {
-      // Method 1: window.open
-      const newWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-      if (!newWindow) {
-        console.log('Popup blocked, trying alternative method');
-        // Method 2: Direct location change
-        window.location.href = whatsappUrl;
-      }
-    } catch (error) {
-      console.error('Error opening WhatsApp:', error);
-      // Method 3: Fallback
-      try {
-        window.location.href = whatsappUrl;
-      } catch (fallbackError) {
-        console.error('Fallback method also failed:', fallbackError);
-        alert('Unable to open WhatsApp. Please call +254715812430 directly.');
-      }
     }
   };
 
@@ -118,17 +99,19 @@ const WhatsAppButton = ({
         )}
 
         {/* Main WhatsApp Button */}
-        <button
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={handleClick}
           className="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-110 group-hover:animate-pulse cursor-pointer"
           aria-label="Chat on WhatsApp"
-          type="button"
         >
           <FaWhatsapp className="text-2xl" />
-        </button>
+        </a>
 
         {/* Ripple Effect */}
-        <div className="absolute inset-0 rounded-full bg-green-400 opacity-20 animate-ping"></div>
+        <div className="absolute inset-0 rounded-full bg-green-400 opacity-20 animate-ping pointer-events-none"></div>
       </div>
 
       {/* Mobile-specific positioning - handled by Tailwind responsive classes */}
