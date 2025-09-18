@@ -31,8 +31,8 @@ const workSessions = [
   },
   {
     id: 4,
-    title: "Pergola Construction Timelapse",
-    description: "Complete pergola build showcasing our craftsmanship",
+    title: "Cabro Works",
+    description: "Cabro works installation showcasing our craftsmanship and durable finish",
     videoId: "OgCAs4ST5zY", // Updated to custom YouTube video ID
     thumbnail: "https://img.youtube.com/vi/OgCAs4ST5zY/maxresdefault.jpg",
     duration: "10:15",
