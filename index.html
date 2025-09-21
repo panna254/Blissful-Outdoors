@@ -84,6 +84,19 @@
       <input type="text" name="specialRequirements" />
       <input type="text" name="bot-field" />
     </form>
+
+    <!-- Hidden form for Site Survey Netlify form detection -->
+    <form name="site-survey-request" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="fullName" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="location" />
+      <input type="text" name="address" />
+      <input type="text" name="projectDescription" />
+      <input type="date" name="preferredDate" />
+      <input type="text" name="surveyCost" />
+      <input type="text" name="bot-field" />
+    </form>
     
     <script type="module" src="/src/main.jsx"></script>
   </body>

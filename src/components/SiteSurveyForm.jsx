@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import emailjs from '@emailjs/browser';
 
 const SiteSurveyForm = () => {
   const navigate = useNavigate();
@@ -117,28 +116,36 @@ const SiteSurveyForm = () => {
 
     setIsSubmitting(true);
 
-    const templateParams = {
-      fullName: formData.fullName,
-      email: formData.email,
-      phone: formData.phone,
-      location: formData.location,
-      address: formData.address || 'Not provided',
-      preferredDate: formData.preferredDate,
-      surveyCost: formData.location ? `KES ${surveyCosts[formData.location]?.toLocaleString() || 'N/A'}` : 'N/A',
-      message: formData.projectDescription
-    };
-
     try {
-      await emailjs.send(
-        'service_blissful',
-        'template_survey',
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-      setShowConfirmation(true);
+      // Create form data for Netlify submission
+      const formDataToSubmit = new FormData();
+      
+      // Add all form fields
+      formDataToSubmit.append('form-name', 'site-survey-request');
+      formDataToSubmit.append('fullName', formData.fullName);
+      formDataToSubmit.append('email', formData.email);
+      formDataToSubmit.append('phone', formData.phone);
+      formDataToSubmit.append('location', formData.location);
+      formDataToSubmit.append('address', formData.address || 'Not provided');
+      formDataToSubmit.append('projectDescription', formData.projectDescription);
+      formDataToSubmit.append('preferredDate', formData.preferredDate);
+      formDataToSubmit.append('surveyCost', formData.location ? `KES ${surveyCosts[formData.location]?.toLocaleString() || 'N/A'}` : 'N/A');
+
+      // Submit to Netlify
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formDataToSubmit).toString()
+      });
+
+      if (response.ok) {
+        setShowConfirmation(true);
+      } else {
+        throw new Error('Form submission failed');
+      }
     } catch (error) {
-      // console.error('Error sending email:', error); // Removed for production
-      alert('There was an error sending your request. Please try again.');
+      console.error('Form submission error:', error);
+      alert('There was an error sending your request. Please try again or contact us via WhatsApp.');
     } finally {
       setIsSubmitting(false);
     }
@@ -230,7 +237,9 @@ const SiteSurveyForm = () => {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="p-8" onKeyDown={handleKeyDown}>
+          <form onSubmit={handleSubmit} className="p-8" onKeyDown={handleKeyDown} name="site-survey-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="site-survey-request" />
+            <input type="hidden" name="bot-field" style={{display: 'none'}} />
             {/* Step 1: Personal Information */}
             {currentStep === 1 && (
               <div className="space-y-6">
