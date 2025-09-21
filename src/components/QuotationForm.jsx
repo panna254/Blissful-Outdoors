@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const quotableServices = [
@@ -60,41 +60,6 @@ const servicePricing = {
   }
 };
 
-const surveyCosts = {
-  'Nairobi': 2000,
-  'Kiambu': 2000,
-  'Murang\'a': 2000,
-  'Machakos': 3000,
-  'Embu': 4000,
-  'Kitui/Makueni': 4000,
-  'Kirinyaga': 5000,
-  'Nyeri': 5000,
-  'Nakuru': 5000,
-  'Nyandarua': 7000,
-  'Narok': 7000,
-  'Laikipia': 7000,
-  'Meru': 8000,
-  'Kajiado': 10000,
-  'Bungoma': 10000,
-  'Isiolo': 10000,
-  'Eldoret': 12000,
-  'Kisii/Nyamira': 12000,
-  'Kilifi/Mombasa/Kwale/Taita Taveta': 15000,
-  'Lamu': 15000,
-  'Garissa': 15000,
-  'Vihiga': 15000,
-  'Bomet': 15000,
-  'Nandi': 15000,
-  'Kakamega': 15000,
-  'Homabay': 15000,
-  'Migori': 15000,
-  'Kisumu': 15000,
-  'Kericho': 15000,
-  'Kitale': 15000,
-  'Wajir': 20000,
-  'Samburu/Marsabit': 20000,
-  'Moyale/Mandera': 30000
-};
 
 const QuotationForm = () => {
   const navigate = useNavigate();
@@ -145,7 +110,7 @@ const QuotationForm = () => {
   }, [searchParams]);
 
   // Calculate estimated cost
-  const calculateEstimate = () => {
+  const calculateEstimate = useCallback(() => {
     const service = formData.selectedService;
     const pricing = servicePricing[service];
     
@@ -195,11 +160,11 @@ const QuotationForm = () => {
     }
     
     return Math.round(cost);
-  };
+  }, [formData.selectedService, formData.numberOfCars, formData.squareMeters, formData.materialType, formData.flooringArea, formData.fenceLength]);
 
   useEffect(() => {
     setEstimatedCost(calculateEstimate());
-  }, [formData.selectedService, formData.numberOfCars, formData.squareMeters, formData.materialType, formData.flooringArea, formData.fenceLength]);
+  }, [calculateEstimate]);
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -209,14 +174,6 @@ const QuotationForm = () => {
     }
   };
 
-  const handleCheckboxChange = (field, value) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: prev[field].includes(value)
-        ? prev[field].filter(item => item !== value)
-        : [...prev[field], value]
-    }));
-  };
 
   const validateStep = (step) => {
     const newErrors = {};
@@ -254,6 +211,7 @@ const QuotationForm = () => {
     setIsSubmitting(true);
 
     try {
+      // Create form data for Netlify submission
       const formDataToSubmit = new FormData();
       
       // Add all form fields
@@ -285,13 +243,14 @@ const QuotationForm = () => {
       
       // Additional details
       formDataToSubmit.append('projectDescription', formData.projectDescription || 'Not provided');
-      formDataToSubmit.append('specificRequirements', formData.specificRequirements || 'Not provided');
+      formDataToSubmit.append('specificRequirements', formData.specialRequirements || 'Not provided');
       formDataToSubmit.append('preferredMaterials', formData.preferredMaterials || 'Not provided');
       formDataToSubmit.append('designPreferences', formData.designPreferences || 'Not provided');
       formDataToSubmit.append('hasExistingStructures', formData.hasExistingStructures || 'Not specified');
       formDataToSubmit.append('accessibilityNotes', formData.accessibilityNotes || 'None');
       formDataToSubmit.append('specialRequests', formData.specialRequests || 'None');
 
+      // Submit to Netlify
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
