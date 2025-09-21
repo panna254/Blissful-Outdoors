@@ -93,6 +93,18 @@ const Navbar = () => {
                     >
                       Downloads
                     </Link>
+                    <Link
+                      to="/about/team"
+                      className="block px-4 py-2 text-sm hover:bg-gray-50"
+                    >
+                      Our Team
+                    </Link>
+                    <Link
+                      to="/about/careers"
+                      className="block px-4 py-2 text-sm hover:bg-gray-50"
+                    >
+                      Careers
+                    </Link>
                   </div>
                 </div>
               );
@@ -225,6 +237,20 @@ const Navbar = () => {
                         className="hover:underline underline-offset-4 decoration-green-400"
                       >
                         Downloads
+                      </Link>
+                      <Link
+                        to="/about/team"
+                        onClick={() => { setMenuOpen(false); setMobileWorkOpen(false); }}
+                        className="hover:underline underline-offset-4 decoration-green-400"
+                      >
+                        Our Team
+                      </Link>
+                      <Link
+                        to="/about/careers"
+                        onClick={() => { setMenuOpen(false); setMobileWorkOpen(false); }}
+                        className="hover:underline underline-offset-4 decoration-green-400"
+                      >
+                        Careers
                       </Link>
                     </div>
                   )}

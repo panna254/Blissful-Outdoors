@@ -26,24 +26,6 @@ const Downloads = () => {
       format: "PDF",
       image: landscapingImg,
       downloadUrl: "#" // Placeholder
-    },
-    {
-      title: "Our Team",
-      description: "Meet our experienced professionals and skilled craftsmen who bring your outdoor visions to life.",
-      icon: FaUsers,
-      fileSize: "1.8 MB",
-      format: "PDF", 
-      image: gazeboImg,
-      downloadUrl: "#" // Placeholder
-    },
-    {
-      title: "Careers",
-      description: "Join our growing team! Current job openings, requirements, and application process information.",
-      icon: FaBriefcase,
-      fileSize: "1.2 MB",
-      format: "PDF",
-      image: terrazzoImg,
-      downloadUrl: "#" // Placeholder
     }
   ];
 
@@ -56,8 +38,8 @@ const Downloads = () => {
     <>
       <SEOHelmet 
         title="Downloads | Company Profile, Catalogue & Careers - Blissful Outdoors"
-        description="Download our company profile, services catalogue, team information, and career opportunities. Learn more about Blissful Outdoors professional outdoor services."
-        keywords="company profile download, services catalogue, careers blissful outdoors, team information"
+        description="Download our company profile and services catalogue. Learn more about Blissful Outdoors professional outdoor services and comprehensive landscaping solutions."
+        keywords="company profile download, services catalogue, blissful outdoors resources, outdoor services information"
         canonicalUrl="https://blissfuloutdoorsolutions.com/about/downloads"
       />
       
@@ -69,8 +51,8 @@ const Downloads = () => {
               Downloads & Resources
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Access our company information, service catalogues, and career opportunities. 
-              Everything you need to know about Blissful Outdoors in downloadable formats.
+              Access our company information and service catalogues. 
+              Download our comprehensive resources to learn more about Blissful Outdoors and our services.
             </p>
           </div>
 
