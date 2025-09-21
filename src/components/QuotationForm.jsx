@@ -705,6 +705,106 @@ const QuotationForm = () => {
               </div>
             )}
 
+            {/* Step 3: Project Requirements & Additional Details */}
+            {currentStep === 3 && (
+              <div className="space-y-6">
+                <h2 className="text-xl font-semibold text-gray-800 mb-4">Project Requirements & Additional Details</h2>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Project Description
+                  </label>
+                  <textarea
+                    value={formData.projectDescription}
+                    onChange={(e) => handleInputChange('projectDescription', e.target.value)}
+                    rows="4"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    placeholder="Please describe your project in detail..."
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Preferred Materials
+                  </label>
+                  <textarea
+                    value={formData.preferredMaterials}
+                    onChange={(e) => handleInputChange('preferredMaterials', e.target.value)}
+                    rows="3"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    placeholder="Any specific materials or brands you prefer?"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Design Preferences
+                  </label>
+                  <textarea
+                    value={formData.designPreferences}
+                    onChange={(e) => handleInputChange('designPreferences', e.target.value)}
+                    rows="3"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    placeholder="Any specific design preferences or styles?"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Existing Structures
+                  </label>
+                  <select
+                    value={formData.hasExistingStructures}
+                    onChange={(e) => handleInputChange('hasExistingStructures', e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  >
+                    <option value="">Select option</option>
+                    <option value="No existing structures">No existing structures</option>
+                    <option value="Some existing structures">Some existing structures</option>
+                    <option value="Complex existing setup">Complex existing setup</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Accessibility Notes
+                  </label>
+                  <textarea
+                    value={formData.accessibilityNotes}
+                    onChange={(e) => handleInputChange('accessibilityNotes', e.target.value)}
+                    rows="3"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    placeholder="Any accessibility considerations or site access notes?"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Special Requests
+                  </label>
+                  <textarea
+                    value={formData.specialRequests}
+                    onChange={(e) => handleInputChange('specialRequests', e.target.value)}
+                    rows="3"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    placeholder="Any other special requests or considerations?"
+                  />
+                </div>
+
+                {estimatedCost > 0 && (
+                  <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+                    <h3 className="text-lg font-semibold text-green-700 mb-2">Final Estimated Cost</h3>
+                    <p className="text-2xl font-bold text-green-800">
+                      KES {estimatedCost.toLocaleString()}
+                    </p>
+                    <p className="text-sm text-gray-600 mt-2">
+                      * Final pricing may vary based on site conditions and specific requirements
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Navigation Buttons */}
             <div className="flex flex-col sm:flex-row justify-between items-center mt-8 pt-6 border-t border-gray-200 gap-4">
               <div className="w-full sm:w-auto">
@@ -741,14 +841,14 @@ const QuotationForm = () => {
                   </span>
                 </button>
                 
-                {currentStep < 2 ? (
+                {currentStep < 3 ? (
                   <button
                     type="button"
                     onClick={nextStep}
                     className="w-full sm:w-auto px-6 py-3 bg-green-600 text-white rounded-xl hover:bg-green-700 active:bg-green-800 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-green-300 min-h-[48px] flex items-center justify-center font-medium"
                   >
                     <span className="flex items-center gap-2">
-                      Next
+                      {currentStep === 2 ? 'Review & Submit' : 'Next'}
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                       </svg>
