@@ -189,6 +189,15 @@ const QuotationForm = () => {
       if (!formData.selectedService) newErrors.selectedService = 'Please select a service';
     }
     
+    if (step === 3) {
+      if (!formData.projectDescription || !formData.projectDescription.trim()) {
+        newErrors.projectDescription = 'Project description is required';
+      }
+      if (!formData.hasExistingStructures) {
+        newErrors.hasExistingStructures = 'Please specify existing structures';
+      }
+    }
+    
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -708,19 +717,27 @@ const QuotationForm = () => {
             {/* Step 3: Project Requirements & Additional Details */}
             {currentStep === 3 && (
               <div className="space-y-6">
-                <h2 className="text-xl font-semibold text-gray-800 mb-4">Project Requirements & Additional Details</h2>
+                <div>
+                  <h2 className="text-xl font-semibold text-gray-800 mb-2">Project Requirements & Additional Details</h2>
+                  <p className="text-sm text-gray-600 mb-4">
+                    Please provide additional details about your project. Fields marked with * are required.
+                  </p>
+                </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Project Description
+                    Project Description *
                   </label>
                   <textarea
                     value={formData.projectDescription}
                     onChange={(e) => handleInputChange('projectDescription', e.target.value)}
                     rows="4"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent ${
+                      errors.projectDescription ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Please describe your project in detail..."
                   />
+                  {errors.projectDescription && <p className="text-red-500 text-sm mt-1">{errors.projectDescription}</p>}
                 </div>
 
                 <div>
@@ -751,18 +768,21 @@ const QuotationForm = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Existing Structures
+                    Existing Structures *
                   </label>
                   <select
                     value={formData.hasExistingStructures}
                     onChange={(e) => handleInputChange('hasExistingStructures', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent ${
+                      errors.hasExistingStructures ? 'border-red-500' : 'border-gray-300'
+                    }`}
                   >
                     <option value="">Select option</option>
                     <option value="No existing structures">No existing structures</option>
                     <option value="Some existing structures">Some existing structures</option>
                     <option value="Complex existing setup">Complex existing setup</option>
                   </select>
+                  {errors.hasExistingStructures && <p className="text-red-500 text-sm mt-1">{errors.hasExistingStructures}</p>}
                 </div>
 
                 <div>
@@ -857,7 +877,7 @@ const QuotationForm = () => {
                 ) : (
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !formData.projectDescription?.trim() || !formData.hasExistingStructures}
                     className="w-full sm:w-auto px-6 py-3 bg-green-600 text-white rounded-xl hover:bg-green-700 active:bg-green-800 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-green-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none min-h-[48px] flex items-center justify-center font-medium"
                   >
                     <span className="flex items-center gap-2">
@@ -881,6 +901,15 @@ const QuotationForm = () => {
                   </button>
                 )}
               </div>
+              
+              {/* Validation message for Step 3 */}
+              {currentStep === 3 && (!formData.projectDescription?.trim() || !formData.hasExistingStructures) && (
+                <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+                  <p className="text-sm text-yellow-800">
+                    <strong>Please complete the required fields above</strong> before submitting your quotation request.
+                  </p>
+                </div>
+              )}
             </div>
           </form>
           
