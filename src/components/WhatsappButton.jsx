@@ -8,7 +8,7 @@ const WhatsAppButton = ({
   const [isVisible, setIsVisible] = useState(false);
   const [showTooltipState, setShowTooltipState] = useState(false);
   
-  const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER || "254741612080";
+  const phoneNumber = "254715812430"; // WhatsApp number for Blissful Outdoors
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   

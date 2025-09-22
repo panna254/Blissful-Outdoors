@@ -21,7 +21,7 @@ const Footer = () => {
     { name: "Instagram", url: "https://www.instagram.com/blissful_outdoorsolutions/", icon: FaInstagram },
     { name: "YouTube", url: "https://www.youtube.com/@blissfuloutdoorsolutions", icon: FaYoutube },
     { name: "TikTok", url: "https://www.tiktok.com/@blissfuloutdoorsolutions", icon: FaTiktok },
-    { name: "WhatsApp", url: "https://wa.me/254741612080", icon: FaWhatsapp },
+    { name: "WhatsApp", url: "https://wa.me/254715812430", icon: FaWhatsapp },
   ];
 
   return (
