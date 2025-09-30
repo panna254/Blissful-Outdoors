@@ -76,7 +76,7 @@ const AboutSection = () => {
           <div className="bg-green-50 shadow p-6 rounded-2xl">
             <h3 className="text-xl font-semibold text-green-800">Our Mantra</h3>
             <p className="text-gray-700 mt-2">
-              “We transform and add value to your Outdoor Living Areas.” This slogan captures our approach from day one — transforming ideas into tangible results.
+              “We transform and add value to your Outdoor Living Areas.” This slogan captures our approach from day one — transforming ideas into tangible results in outdoor living areas.
             </p>
           </div>
 
